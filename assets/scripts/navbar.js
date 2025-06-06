@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.head.appendChild(style);
 
     const nav = document.createElement('nav');
-    nav.className = 'nav-container collapsed';
+    nav.className = 'nav-container';
     nav.innerHTML = `
         <div class="nav-header">
             <span class="current-section"></span>
