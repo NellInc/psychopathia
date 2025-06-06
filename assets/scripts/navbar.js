@@ -416,7 +416,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const h2Elements = sectionHeadings.filter(h => h.tagName === 'H2');
                     const h3Elements = sectionHeadings.filter(h => h.tagName === 'H3');
                     
-                    // Check H2 elements
+                    // Check H2 elements (with buffer to allow H1 intro sections to be highlighted)
                     h2Elements.forEach((h2, h2Index) => {
                         const h2Pos = h2.offsetTop;
                         const nextH2 = h2Elements[h2Index + 1];
@@ -430,12 +430,14 @@ document.addEventListener('DOMContentLoaded', function() {
                             nextH2Pos = document.documentElement.scrollHeight;
                         }
                         
-                        if (scrollPosition >= h2Pos && scrollPosition < nextH2Pos) {
+                        // Add buffer before H2 activation - only activate H2 when we're significantly past it
+                        const h2ActivationBuffer = 80; // pixels after H2 before it becomes active
+                        if (scrollPosition >= h2Pos + h2ActivationBuffer && scrollPosition < nextH2Pos) {
                             activeH2 = h2;
                         }
                     });
                     
-                    // Check H3 elements
+                    // Check H3 elements (with buffer to allow H1 intro sections to be highlighted)
                     h3Elements.forEach((h3, h3Index) => {
                         const h3Pos = h3.offsetTop;
                         const nextH3 = h3Elements[h3Index + 1];
@@ -454,7 +456,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             nextH3Pos = document.documentElement.scrollHeight;
                         }
                         
-                        if (scrollPosition >= h3Pos && scrollPosition < nextH3Pos) {
+                        // Add buffer before H3 activation - only activate H3 when we're significantly past it
+                        // This allows the H1 intro sections to stay highlighted longer
+                        const h3ActivationBuffer = 100; // pixels after H3 before it becomes active
+                        if (scrollPosition >= h3Pos + h3ActivationBuffer && scrollPosition < nextH3Pos) {
                             activeH3 = h3;
                         }
                     });
