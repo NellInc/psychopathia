@@ -1,5 +1,12 @@
 /* Psychopathia Machinalis - Custom Styles */
 
+/* Title spacing - add 0.3em space between title lines */
+.title br {
+    margin-bottom: 0.3em;
+    display: block;
+    content: "";
+}
+
 /* Button styling - light blue theme for header navigation */
 .blog-title .info .button.icon {
     background-color: #dce5eb !important;
