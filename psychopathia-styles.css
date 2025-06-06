@@ -500,6 +500,30 @@ pre {
     color: #2c3e50;
 }
 
+/* TEST: Navy/Black styling for Diagnostic Criteria, Symptoms, and Etiology */
+.disorder-white h4:contains("Diagnostic Criteria") + ol,
+.disorder-grey h4:contains("Diagnostic Criteria") + ol,
+.disorder-white h4:contains("Symptoms") + ol,
+.disorder-grey h4:contains("Symptoms") + ol,
+.disorder-white h4:contains("Etiology") + ol,
+.disorder-grey h4:contains("Etiology") + ol {
+    background: linear-gradient(90deg, rgba(44, 62, 80, 0.08), transparent);
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid rgba(44, 62, 80, 0.15);
+}
+
+.disorder-white h4:contains("Diagnostic Criteria") + ol li:before,
+.disorder-grey h4:contains("Diagnostic Criteria") + ol li:before,
+.disorder-white h4:contains("Symptoms") + ol li:before,
+.disorder-grey h4:contains("Symptoms") + ol li:before,
+.disorder-white h4:contains("Etiology") + ol li:before,
+.disorder-grey h4:contains("Etiology") + ol li:before {
+    background: #2c3e50;
+    color: white;
+    border-radius: 3px;
+}
+
 /* Responsive improvements */
 @media (max-width: 768px) {
     .disorder-white,
