@@ -293,35 +293,55 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         navList.appendChild(h1Item);
 
-        // Find all h2 and h3 elements until the next h1
-        let nextElement = h1.nextElementSibling;
-        while (nextElement && nextElement.tagName !== 'H1') {
-            if (nextElement.tagName === 'H2') {
-                const h2Element = nextElement; // Store reference for closure
-                const h2Item = document.createElement('li');
-                h2Item.className = 'nav-item h2';
-                h2Item.textContent = h2Element.textContent.trim();
-                h2Item.addEventListener('click', () => {
-                    h2Element.scrollIntoView({ behavior: 'smooth' });
-                    if (window.innerWidth < 768) {
-                        resetNavbarState();
-                    }
-                });
-                navList.appendChild(h2Item);
-            } else if (nextElement.tagName === 'H3') {
-                const h3Element = nextElement; // Store reference for closure
-                const h3Item = document.createElement('li');
-                h3Item.className = 'nav-item h3';
-                h3Item.textContent = h3Element.textContent.trim();
-                h3Item.addEventListener('click', () => {
-                    h3Element.scrollIntoView({ behavior: 'smooth' });
-                    if (window.innerWidth < 768) {
-                        resetNavbarState();
-                    }
-                });
-                navList.appendChild(h3Item);
-            }
-            nextElement = nextElement.nextElementSibling;
+        // Find the parent container of this H1
+        const parentContainer = h1.closest('.container.blog.main');
+        if (parentContainer) {
+            // Find all h2 and h3 elements within this container, after this h1
+            const allHeadings = Array.from(parentContainer.querySelectorAll('h2, h3'));
+            const h1Index = Array.from(parentContainer.querySelectorAll('h1')).indexOf(h1);
+            const nextH1 = Array.from(parentContainer.querySelectorAll('h1'))[h1Index + 1];
+            
+            // Filter headings that come after this h1 but before the next h1
+            const sectionHeadings = allHeadings.filter(heading => {
+                const headingPos = heading.compareDocumentPosition(h1);
+                const afterH1 = (headingPos & Node.DOCUMENT_POSITION_PRECEDING) !== 0;
+                
+                if (!afterH1) return false;
+                
+                if (nextH1) {
+                    const nextH1Pos = heading.compareDocumentPosition(nextH1);
+                    const beforeNextH1 = (nextH1Pos & Node.DOCUMENT_POSITION_FOLLOWING) !== 0;
+                    return beforeNextH1;
+                }
+                return true;
+            });
+            
+            // Add the filtered headings to navigation
+            sectionHeadings.forEach(heading => {
+                if (heading.tagName === 'H2') {
+                    const h2Item = document.createElement('li');
+                    h2Item.className = 'nav-item h2';
+                    h2Item.textContent = heading.textContent.trim();
+                    h2Item.addEventListener('click', () => {
+                        heading.scrollIntoView({ behavior: 'smooth' });
+                        if (window.innerWidth < 768) {
+                            resetNavbarState();
+                        }
+                    });
+                    navList.appendChild(h2Item);
+                } else if (heading.tagName === 'H3') {
+                    const h3Item = document.createElement('li');
+                    h3Item.className = 'nav-item h3';
+                    h3Item.textContent = heading.textContent.trim();
+                    h3Item.addEventListener('click', () => {
+                        heading.scrollIntoView({ behavior: 'smooth' });
+                        if (window.innerWidth < 768) {
+                            resetNavbarState();
+                        }
+                    });
+                    navList.appendChild(h3Item);
+                }
+            });
         }
     });
 
@@ -370,62 +390,74 @@ document.addEventListener('DOMContentLoaded', function() {
             if (scrollPosition >= currentPos && scrollPosition < nextPos) {
                 activeH1 = h1;
                 
-                // Find active H2 and H3 within this H1 section
-                let nextElement = h1.nextElementSibling;
-                while (nextElement && (nextH1 === null || nextElement !== nextH1)) {
-                    if (nextElement.tagName === 'H2') {
-                        const h2Pos = nextElement.offsetTop;
+                // Find active H2 and H3 within this H1 section using the same container approach
+                const parentContainer = h1.closest('.container.blog.main');
+                if (parentContainer) {
+                    const allHeadings = Array.from(parentContainer.querySelectorAll('h2, h3'));
+                    const h1Index = Array.from(parentContainer.querySelectorAll('h1')).indexOf(h1);
+                    const nextH1Element = Array.from(parentContainer.querySelectorAll('h1'))[h1Index + 1];
+                    
+                    // Filter headings that come after this h1 but before the next h1
+                    const sectionHeadings = allHeadings.filter(heading => {
+                        const headingPos = heading.compareDocumentPosition(h1);
+                        const afterH1 = (headingPos & Node.DOCUMENT_POSITION_PRECEDING) !== 0;
+                        
+                        if (!afterH1) return false;
+                        
+                        if (nextH1Element) {
+                            const nextH1Pos = heading.compareDocumentPosition(nextH1Element);
+                            const beforeNextH1 = (nextH1Pos & Node.DOCUMENT_POSITION_FOLLOWING) !== 0;
+                            return beforeNextH1;
+                        }
+                        return true;
+                    });
+                    
+                    // Find active H2 and H3 within the section
+                    const h2Elements = sectionHeadings.filter(h => h.tagName === 'H2');
+                    const h3Elements = sectionHeadings.filter(h => h.tagName === 'H3');
+                    
+                    // Check H2 elements
+                    h2Elements.forEach((h2, h2Index) => {
+                        const h2Pos = h2.offsetTop;
+                        const nextH2 = h2Elements[h2Index + 1];
                         let nextH2Pos;
                         
-                        // Find the next H2 or H1 position to compare against
-                        let tempNext = nextElement.nextElementSibling;
-                        while (tempNext && tempNext.tagName !== 'H2' && tempNext !== nextH1) {
-                            tempNext = tempNext.nextElementSibling;
-                        }
-                        
-                        if (tempNext && tempNext.tagName === 'H2') {
-                            nextH2Pos = tempNext.offsetTop;
-                        } else if (nextH1) {
-                            nextH2Pos = nextH1.offsetTop;
+                        if (nextH2) {
+                            nextH2Pos = nextH2.offsetTop;
+                        } else if (nextH1Element) {
+                            nextH2Pos = nextH1Element.offsetTop;
                         } else {
                             nextH2Pos = document.documentElement.scrollHeight;
                         }
-
+                        
                         if (scrollPosition >= h2Pos && scrollPosition < nextH2Pos) {
-                            activeH2 = nextElement;
-                            
-                            // Find active H3 within this H2 section
-                            let h3Next = nextElement.nextElementSibling;
-                            while (h3Next && h3Next.tagName !== 'H2' && h3Next !== nextH1) {
-                                if (h3Next.tagName === 'H3') {
-                                    const h3Pos = h3Next.offsetTop;
-                                    let nextH3Pos;
-                                    
-                                    // Find the next H3, H2, or H1 position
-                                    let h3TempNext = h3Next.nextElementSibling;
-                                    while (h3TempNext && h3TempNext.tagName !== 'H3' && h3TempNext.tagName !== 'H2' && h3TempNext !== nextH1) {
-                                        h3TempNext = h3TempNext.nextElementSibling;
-                                    }
-                                    
-                                    if (h3TempNext && h3TempNext.tagName === 'H3') {
-                                        nextH3Pos = h3TempNext.offsetTop;
-                                    } else if (h3TempNext && h3TempNext.tagName === 'H2') {
-                                        nextH3Pos = h3TempNext.offsetTop;
-                                    } else if (nextH1) {
-                                        nextH3Pos = nextH1.offsetTop;
-                                    } else {
-                                        nextH3Pos = document.documentElement.scrollHeight;
-                                    }
-                                    
-                                    if (scrollPosition >= h3Pos && scrollPosition < nextH3Pos) {
-                                        activeH3 = h3Next;
-                                    }
-                                }
-                                h3Next = h3Next.nextElementSibling;
-                            }
+                            activeH2 = h2;
                         }
-                    }
-                    nextElement = nextElement.nextElementSibling;
+                    });
+                    
+                    // Check H3 elements
+                    h3Elements.forEach((h3, h3Index) => {
+                        const h3Pos = h3.offsetTop;
+                        const nextH3 = h3Elements[h3Index + 1];
+                        let nextH3Pos;
+                        
+                        if (nextH3) {
+                            nextH3Pos = nextH3.offsetTop;
+                        } else if (activeH2) {
+                            // Find next H2 after the active one
+                            const activeH2Index = h2Elements.indexOf(activeH2);
+                            const nextH2AfterActive = h2Elements[activeH2Index + 1];
+                            nextH3Pos = nextH2AfterActive ? nextH2AfterActive.offsetTop : (nextH1Element ? nextH1Element.offsetTop : document.documentElement.scrollHeight);
+                        } else if (nextH1Element) {
+                            nextH3Pos = nextH1Element.offsetTop;
+                        } else {
+                            nextH3Pos = document.documentElement.scrollHeight;
+                        }
+                        
+                        if (scrollPosition >= h3Pos && scrollPosition < nextH3Pos) {
+                            activeH3 = h3;
+                        }
+                    });
                 }
             }
         });
@@ -436,9 +468,18 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (activeH1) {
             navItems.forEach((item) => {
-                if ((item.classList.contains('h1') && activeH1.textContent.trim() === item.textContent) ||
-                    (item.classList.contains('h2') && activeH2 && activeH2.textContent.trim() === item.textContent) ||
-                    (item.classList.contains('h3') && activeH3 && activeH3.textContent.trim() === item.textContent)) {
+                // Only highlight the most specific active element
+                let shouldHighlight = false;
+                
+                if (activeH3 && item.classList.contains('h3') && activeH3.textContent.trim() === item.textContent) {
+                    shouldHighlight = true;
+                } else if (!activeH3 && activeH2 && item.classList.contains('h2') && activeH2.textContent.trim() === item.textContent) {
+                    shouldHighlight = true;
+                } else if (!activeH3 && !activeH2 && item.classList.contains('h1') && activeH1.textContent.trim() === item.textContent) {
+                    shouldHighlight = true;
+                }
+                
+                if (shouldHighlight) {
                     item.classList.add('active');
                 } else {
                     item.classList.remove('active');
