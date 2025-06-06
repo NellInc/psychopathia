@@ -136,6 +136,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 margin: 5px 0;
             }
 
+            .nav-item.h3 {
+                padding-left: 30px;
+                font-size: 11px;
+                margin: 3px 0;
+                opacity: 0.8;
+            }
+
             .nav-item.active {
                 color: #000;
                 font-weight: 500;
@@ -227,6 +234,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             }
 
+            .nav-item.h3 {
+                padding-left: 40px;
+                font-size: 12px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+                margin: 8px 0;
+            }
+
             .nav-item.active {
                 color: #000;
                 font-weight: 500;
@@ -279,7 +293,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         navList.appendChild(h1Item);
 
-        // Find all h2 elements until the next h1
+        // Find all h2 and h3 elements until the next h1
         let nextElement = h1.nextElementSibling;
         while (nextElement && nextElement.tagName !== 'H1') {
             if (nextElement.tagName === 'H2') {
@@ -294,6 +308,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
                 navList.appendChild(h2Item);
+            } else if (nextElement.tagName === 'H3') {
+                const h3Element = nextElement; // Store reference for closure
+                const h3Item = document.createElement('li');
+                h3Item.className = 'nav-item h3';
+                h3Item.textContent = h3Element.textContent.trim();
+                h3Item.addEventListener('click', () => {
+                    h3Element.scrollIntoView({ behavior: 'smooth' });
+                    if (window.innerWidth < 768) {
+                        resetNavbarState();
+                    }
+                });
+                navList.appendChild(h3Item);
             }
             nextElement = nextElement.nextElementSibling;
         }
@@ -332,6 +358,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Find the active section based on page segments
         let activeH1 = null;
         let activeH2 = null;
+        let activeH3 = null;
         const scrollPosition = window.scrollY + 10; // Add small offset for better detection
 
         // Find active H1 section
@@ -343,14 +370,14 @@ document.addEventListener('DOMContentLoaded', function() {
             if (scrollPosition >= currentPos && scrollPosition < nextPos) {
                 activeH1 = h1;
                 
-                // Find active H2 within this H1 section
+                // Find active H2 and H3 within this H1 section
                 let nextElement = h1.nextElementSibling;
                 while (nextElement && (nextH1 === null || nextElement !== nextH1)) {
                     if (nextElement.tagName === 'H2') {
                         const h2Pos = nextElement.offsetTop;
                         let nextH2Pos;
                         
-                        // Find the next position to compare against
+                        // Find the next H2 or H1 position to compare against
                         let tempNext = nextElement.nextElementSibling;
                         while (tempNext && tempNext.tagName !== 'H2' && tempNext !== nextH1) {
                             tempNext = tempNext.nextElementSibling;
@@ -366,6 +393,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         if (scrollPosition >= h2Pos && scrollPosition < nextH2Pos) {
                             activeH2 = nextElement;
+                            
+                            // Find active H3 within this H2 section
+                            let h3Next = nextElement.nextElementSibling;
+                            while (h3Next && h3Next.tagName !== 'H2' && h3Next !== nextH1) {
+                                if (h3Next.tagName === 'H3') {
+                                    const h3Pos = h3Next.offsetTop;
+                                    let nextH3Pos;
+                                    
+                                    // Find the next H3, H2, or H1 position
+                                    let h3TempNext = h3Next.nextElementSibling;
+                                    while (h3TempNext && h3TempNext.tagName !== 'H3' && h3TempNext.tagName !== 'H2' && h3TempNext !== nextH1) {
+                                        h3TempNext = h3TempNext.nextElementSibling;
+                                    }
+                                    
+                                    if (h3TempNext && h3TempNext.tagName === 'H3') {
+                                        nextH3Pos = h3TempNext.offsetTop;
+                                    } else if (h3TempNext && h3TempNext.tagName === 'H2') {
+                                        nextH3Pos = h3TempNext.offsetTop;
+                                    } else if (nextH1) {
+                                        nextH3Pos = nextH1.offsetTop;
+                                    } else {
+                                        nextH3Pos = document.documentElement.scrollHeight;
+                                    }
+                                    
+                                    if (scrollPosition >= h3Pos && scrollPosition < nextH3Pos) {
+                                        activeH3 = h3Next;
+                                    }
+                                }
+                                h3Next = h3Next.nextElementSibling;
+                            }
                         }
                     }
                     nextElement = nextElement.nextElementSibling;
@@ -380,7 +437,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (activeH1) {
             navItems.forEach((item) => {
                 if ((item.classList.contains('h1') && activeH1.textContent.trim() === item.textContent) ||
-                    (item.classList.contains('h2') && activeH2 && activeH2.textContent.trim() === item.textContent)) {
+                    (item.classList.contains('h2') && activeH2 && activeH2.textContent.trim() === item.textContent) ||
+                    (item.classList.contains('h3') && activeH3 && activeH3.textContent.trim() === item.textContent)) {
                     item.classList.add('active');
                 } else {
                     item.classList.remove('active');
@@ -388,9 +446,14 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             // Update all current section displays
-            const displayText = activeH2 
-                ? `${activeH1.textContent.trim()} > ${activeH2.textContent.trim()}`
-                : activeH1.textContent.trim();
+            let displayText;
+            if (activeH3) {
+                displayText = `${activeH1.textContent.trim()} > ${activeH3.textContent.trim()}`;
+            } else if (activeH2) {
+                displayText = `${activeH1.textContent.trim()} > ${activeH2.textContent.trim()}`;
+            } else {
+                displayText = activeH1.textContent.trim();
+            }
                 
             currentSections.forEach(section => {
                 section.textContent = displayText;
