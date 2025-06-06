@@ -485,26 +485,11 @@ pre {
     margin-bottom: 16px;
 }
 
-/* Mitigation section styling - blue theme */
-.disorder-white h4.mitigation + ol,
-.disorder-grey h4.mitigation + ol {
-    background: linear-gradient(90deg, rgba(220, 229, 235, 0.3), transparent);
-    padding: 20px;
-    border-radius: 6px;
-    border: 1px solid rgba(220, 229, 235, 0.5);
-}
-
-.disorder-white h4.mitigation + ol li:before,
-.disorder-grey h4.mitigation + ol li:before {
-    background: #dce5eb;
-    color: #2c3e50;
-}
-
-/* TEST: Blue styling for Diagnostic Criteria and Symptoms - same as mitigation */
+/* Blue styling for Diagnostic Criteria and Etiology */
 .disorder-white h4.diagnostic + ol,
 .disorder-grey h4.diagnostic + ol,
-.disorder-white h4.symptoms + ol,
-.disorder-grey h4.symptoms + ol {
+.disorder-white h4.etiology + ol,
+.disorder-grey h4.etiology + ol {
     background: linear-gradient(90deg, rgba(220, 229, 235, 0.3), transparent);
     padding: 20px;
     border-radius: 6px;
@@ -513,24 +498,28 @@ pre {
 
 .disorder-white h4.diagnostic + ol li:before,
 .disorder-grey h4.diagnostic + ol li:before,
-.disorder-white h4.symptoms + ol li:before,
-.disorder-grey h4.symptoms + ol li:before {
+.disorder-white h4.etiology + ol li:before,
+.disorder-grey h4.etiology + ol li:before {
     background: #dce5eb;
     color: #2c3e50;
     border-radius: 3px;
 }
 
-/* TEST: Gray styling for Etiology - same structure as mitigation but different colors */
-.disorder-white h4.etiology + ol,
-.disorder-grey h4.etiology + ol {
+/* Gray styling for Symptoms and Mitigation */
+.disorder-white h4.symptoms + ol,
+.disorder-grey h4.symptoms + ol,
+.disorder-white h4.mitigation + ol,
+.disorder-grey h4.mitigation + ol {
     background: linear-gradient(90deg, rgba(44, 62, 80, 0.06), transparent);
     padding: 20px;
     border-radius: 6px;
     border: 1px solid rgba(44, 62, 80, 0.12);
 }
 
-.disorder-white h4.etiology + ol li:before,
-.disorder-grey h4.etiology + ol li:before {
+.disorder-white h4.symptoms + ol li:before,
+.disorder-grey h4.symptoms + ol li:before,
+.disorder-white h4.mitigation + ol li:before,
+.disorder-grey h4.mitigation + ol li:before {
     background: #e8e9ea;
     color: #2c3e50;
     border-radius: 3px;
