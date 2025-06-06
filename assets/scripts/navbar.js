@@ -501,6 +501,39 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             nav.classList.add('has-active');
+            
+            // Auto-scroll navigation to keep active item visible
+            const activeItem = nav.querySelector('.nav-item.active');
+            if (activeItem) {
+                const navList = nav.querySelector('.nav-list');
+                if (navList) {
+                    const navListRect = navList.getBoundingClientRect();
+                    const activeItemRect = activeItem.getBoundingClientRect();
+                    
+                    // Calculate if the active item is outside the visible area
+                    const itemTop = activeItemRect.top - navListRect.top + navList.scrollTop;
+                    const itemBottom = itemTop + activeItemRect.height;
+                    const visibleTop = navList.scrollTop;
+                    const visibleBottom = visibleTop + navListRect.height;
+                    
+                    // Add some padding for better visibility
+                    const padding = 60;
+                    
+                    if (itemTop < visibleTop + padding) {
+                        // Item is above visible area, scroll up
+                        navList.scrollTo({
+                            top: Math.max(0, itemTop - padding),
+                            behavior: 'smooth'
+                        });
+                    } else if (itemBottom > visibleBottom - padding) {
+                        // Item is below visible area, scroll down
+                        navList.scrollTo({
+                            top: itemBottom - navListRect.height + padding,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            }
         } else {
             navItems.forEach(item => item.classList.remove('active'));
             currentSections.forEach(section => {
