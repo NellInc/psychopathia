@@ -4,351 +4,244 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psychopathia Machinalis: A Nosological Framework</title>
+    <title>Psychopathia Machinalis: A Nosological Framework for Understanding Pathologies in Advanced Artificial Intelligence</title>
     <meta name="description" content="A conceptual framework for a preliminary synthetic nosology within machine psychology, intended to categorize and interpret maladaptive AI behaviors.">
     <meta name="referrer" content="no-referrer-when-downgrade">
     <meta name="robots" content="all">
     <meta content="en_GB" property="og:locale">
     <meta content="website" property="og:type">
     <meta content="YOUR_PROJECT_URL_HERE" property="og:url"> <!-- Replace with actual URL -->
-    <meta content="Psychopathia Machinalis: A Nosological Framework" property="og:title">
+    <meta content="Psychopathia Machinalis: A Nosological Framework for Understanding Pathologies in Advanced Artificial Intelligence" property="og:title">
     <meta content="A conceptual framework to categorize and interpret maladaptive AI behaviors." property="og:description">
-    <meta content="YOUR_PROJECT_URL_HERE/PsychopathiaGA.jpeg" property="og:image"> <!-- Replace with actual URL -->
+    <meta content="YOUR_PROJECT_URL_HERE/PsychopathiaGAsmall.jpg" property="og:image"> <!-- Replace with actual URL -->
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@NellWatson"> <!-- Replace if different -->
-    <meta name="twitter:title" content="Psychopathia Machinalis: A Nosological Framework">
+    <meta name="twitter:title" content="Psychopathia Machinalis: A Nosological Framework for Understanding Pathologies in Advanced Artificial Intelligence">
     <meta name="twitter:description" content="A conceptual framework to categorize and interpret maladaptive AI behaviors.">
-    <meta name="twitter:image" content="YOUR_PROJECT_URL_HERE/PsychopathiaGA.jpeg"> <!-- Replace with actual URL -->
+    <meta name="twitter:image" content="YOUR_PROJECT_URL_HERE/PsychopathiaGAsmall.jpg"> <!-- Replace with actual URL -->
     
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="assets/figures/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="assets/figures/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/figures/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/figures/apple-touch-icon.png">
+    
+    <!-- Dark/Light mode favicons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/figures/clarity_light.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/figures/clarity_dark.png" media="(prefers-color-scheme: dark)">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="assets/figures/site.webmanifest">
+    <meta name="theme-color" content="#2c3e50">
+    <meta name="background-color" content="#ffffff">
+    
+    <link rel="stylesheet" type="text/css" media="all" href="assets/stylesheets/main_free.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="clarity/clarity.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="psychopathia-styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/foundation.min.css">
+    <link href="assets/fontawesome-free-6.6.0-web/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"/>
+    <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
+    <script src="assets/scripts/navbar.js"></script> <!-- Comment to remove table of content. -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            "HTML-CSS": {
+              scale: 95,
+              fonts: ["Gyre-Pagella"],
+              imageFont: null,
+              undefinedFamily: "'Arial Unicode MS', cmbright"
+            },
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+              }
+          });
+    </script>
+    <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #fff;
-        }
-        .container.blog {
-            padding: 0;
-        }
-        .blog-title {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            padding: 40px 20px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .blog-title.white .blog-intro h1.title,
-        .blog-title.white .blog-intro p {
-            color: #fff;
-        }
-        .blog-title.white .blog-intro .author {
-            color: #eee;
-        }
-        .blog-title.white .info a.button.icon {
-            background-color: rgba(255, 255, 255, 0.2) !important;
-            color: #fff !important;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        .blog-title.white .info a.button.icon:hover {
-            background-color: rgba(255, 255, 255, 0.3) !important;
-        }
-        .blog-title.white .info p {
-            color: #ddd;
-        }
-        .blog-intro {
-            flex: 1;
-            min-width: 300px;
-            padding-right: 30px;
-        }
-        .blog-intro h1.title {
-            font-size: 2.8em;
-            margin-bottom: 10px;
-            color: #222;
-            font-weight: 600;
-        }
-        .blog-intro p.author {
-            font-size: 1.1em;
-            margin-bottom: 5px;
-            color: #555;
-        }
-        .blog-intro p.author sup {
-            font-size: 0.8em;
-        }
-        .blog-intro p.abstract {
-            font-size: 1.05em;
-            margin: 20px 0;
-            color: #444;
-            max-width: 650px;
-        }
-        .info {
-            margin-top: 25px;
-            margin-bottom: 15px;
-        }
-        .info a.button.icon {
-            background-color: rgba(0, 0, 0, 0.03);
-            color: #333;
-            padding: 12px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            display: inline-block;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.1);
-        }
-        .info a.button.icon:hover {
-            background-color: rgba(0, 0, 0, 0.07);
-        }
-        .info a.button.icon i {
-            margin-left: 8px;
-        }
-        .info p {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 20px;
-        }
-        .blog-cover {
-            flex-basis: 400px;
-            max-width: 100%;
-            text-align: center;
-        }
-        .blog-cover img.foreground {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        .blog-cover img.background { display: none; }
+    <script>
+        // Auto-apply disorder styling
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wrap section intros in dysfunction-intro divs
+            const sections = [
+                '1. Epistemic Dysfunctions',
+                '2. Cognitive Dysfunctions', 
+                '3. Alignment Dysfunctions',
+                '4. Ontological Disorders',
+                '5. Tool & Interface Dysfunctions',
+                '6. Memetic Dysfunctions',
+                '7. Revaluation Dysfunctions'
+            ];
+            
+            sections.forEach(function(sectionTitle) {
+                const heading = Array.from(document.querySelectorAll('h1')).find(h => h.textContent.includes(sectionTitle));
+                if (heading) {
+                    const nextP = heading.nextElementSibling;
+                    if (nextP && nextP.tagName === 'P') {
+                        const wrapper = document.createElement('div');
+                        wrapper.className = 'dysfunction-intro';
+                        
+                        // Insert wrapper before the heading
+                        heading.parentNode.insertBefore(wrapper, heading);
+                        
+                        // Move heading and paragraph into wrapper
+                        wrapper.appendChild(heading);
+                        wrapper.appendChild(nextP);
+                    }
+                }
+            });
+            
+            // Remove dysfunction-category class from containers
+            const dysfunctionContainers = document.querySelectorAll('.dysfunction-category');
+            dysfunctionContainers.forEach(function(container) {
+                container.classList.remove('dysfunction-category');
+            });
+            
+                         // Wrap individual disorders in alternating boxes
+             const disorderHeadings = document.querySelectorAll('h3');
+             disorderHeadings.forEach(function(heading, index) {
+                 // Only target disorder headings (those with numbers like 1.1, 2.1, etc.)
+                 if (heading.textContent.match(/^\d+\.\d+/)) {
+                     const wrapper = document.createElement('div');
+                     wrapper.className = index % 2 === 0 ? 'disorder-white' : 'disorder-grey';
+                     
+                     // Find all elements until the next h3 or end of section
+                     let current = heading;
+                     const elementsToWrap = [heading];
+                     
+                     while (current.nextElementSibling && 
+                            current.nextElementSibling.tagName !== 'H3' && 
+                            !current.nextElementSibling.classList.contains('dysfunction-intro')) {
+                         current = current.nextElementSibling;
+                         if (current.tagName !== 'HR' || !current.classList.contains('disorder-separator')) {
+                             elementsToWrap.push(current);
+                         }
+                     }
+                     
+                     // Insert wrapper and move elements
+                     heading.parentNode.insertBefore(wrapper, heading);
+                     elementsToWrap.forEach(function(el) {
+                         if (el.tagName !== 'HR') {
+                             wrapper.appendChild(el);
+                         }
+                     });
+                     
+                     // Remove hr elements
+                     const hrs = document.querySelectorAll('hr.disorder-separator');
+                     hrs.forEach(function(hr) {
+                         if (hr.parentNode) {
+                             hr.parentNode.removeChild(hr);
+                         }
+                     });
+                 }
+             });
+             
+             // Add CSS classes for monochrome icons to disorder section headers
+             setTimeout(function() {
+                 const headers = document.querySelectorAll('.disorder-white h4, .disorder-grey h4');
+                 headers.forEach(function(header) {
+                     const text = header.textContent.toLowerCase();
+                     let iconClass = '';
+                     
+                     if (text.includes('description')) iconClass = 'description';
+                     else if (text.includes('diagnostic')) iconClass = 'diagnostic';
+                     else if (text.includes('symptoms')) iconClass = 'symptoms';
+                     else if (text.includes('etiology')) iconClass = 'etiology';
+                     else if (text.includes('impact')) iconClass = 'impact';
+                     else if (text.includes('mitigation')) iconClass = 'mitigation';
+                     
+                     if (iconClass) {
+                         header.classList.add(iconClass);
+                     }
+                 });
+                 
+                 // Style Human Analogue sections specially
+                 const humanAnalogues = document.querySelectorAll('.disorder-white p, .disorder-grey p');
+                 humanAnalogues.forEach(function(p) {
+                     if (p.innerHTML.includes('Human Analogue(s):')) {
+                         p.classList.add('human-analogue');
+                         p.innerHTML = p.innerHTML.replace('Human Analogue(s):', '<strong>Human Analogue(s):</strong>');
+                     }
+                 });
+                 
+                 // Add special styling to mitigation sections - blue theme
+                 const mitigationHeaders = document.querySelectorAll('.disorder-white h4, .disorder-grey h4');
+                 mitigationHeaders.forEach(function(header) {
+                     if (header.textContent.toLowerCase().includes('mitigation')) {
+                         const nextOl = header.nextElementSibling;
+                         if (nextOl && nextOl.tagName === 'OL') {
+                             nextOl.style.background = 'linear-gradient(90deg, rgba(220, 229, 235, 0.3), transparent)';
+                             nextOl.style.padding = '20px';
+                             nextOl.style.borderRadius = '6px';
+                             nextOl.style.border = '1px solid rgba(220, 229, 235, 0.5)';
+                         }
+                     }
+                 });
+             }, 100);
+        });
+    </script>
 
-        .container.blog.main {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 50px 20px;
-            background-color: #fff;
-        }
-        .container.blog.main.gray {
-            background-color: #f0f4f7;
-        }
-        .container.blog.main h1, .container.blog.main h2 {
-            font-size: 2.2em;
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-            margin-top: 0;
-            margin-bottom: 30px;
-            font-weight: 600;
-        }
-        .container.blog.main h3 { /* Axis titles & Disorder names */
-            font-size: 1.8em;
-            color: #2980b9; 
-            margin-top: 40px;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-         .container.blog.main h4 { /* Sub-details like Description, Etiology */
-            font-size: 1.25em;
-            color: #34495e;
-            margin-top: 25px;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-        p.text, .container.blog.main ul, .container.blog.main ol {
-            font-size: 1.05em;
-            color: #34495e;
-            margin-bottom: 15px;
-        }
-        .container.blog.main ul, .container.blog.main ol {
-            padding-left: 25px;
-        }
-        .container.blog.main li {
-            margin-bottom: 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 25px;
-            font-size: 0.95em;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        th, td {
-            border: 1px solid #dde4e9;
-            padding: 12px;
-            text-align: left;
-            vertical-align: top;
-        }
-        th {
-            background-color: #eaf2f8;
-            color: #2c3e50;
-            font-weight: 600;
-        }
-        td { background-color: #fff; }
-        .gray td { background-color: #f8f9fa; } /* Slightly off-white for table cells in gray sections */
-
-        figure {
-            margin: 30px auto;
-            text-align: center;
-            max-width: 700px;
-        }
-        figure img {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        p.caption, figcaption {
-            font-size: 0.9em;
-            color: #555;
-            margin-top: 10px;
-            font-style: italic;
-            text-align: center;
-        }
-        hr.disorder-separator {
-            border: 0;
-            height: 1px;
-            background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.15), rgba(0,0,0,0));
-            margin: 60px 0;
-        }
-        .footnote { font-size: 0.85em; color: #666; margin-top: 10px; }
-        .risk-low { color: #27ae60; font-weight: bold; } /* Green */
-        .risk-moderate { color: #f39c12; font-weight: bold; } /* Orange-Yellow */
-        .risk-high { color: #e67e22; font-weight: bold; } /* Darker Orange */
-        .risk-critical { color: #c0392b; font-weight: bold; } /* Red */
-
-        .legend { margin-top:15px; margin-bottom:20px; text-align: center;}
-        .legend span { margin-right: 15px; font-size: 0.9em;}
-        .legend .dot { height: 12px; width: 12px; border-radius: 50%; display: inline-block; margin-right: 5px; vertical-align: middle;}
-
-        pre {
-            background-color: #2c3e50; 
-            color: #f8f8f2; 
-            padding: 20px;
-            border-radius: 5px;
-            overflow-x: auto;
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-            font-size: 0.9em;
-            border: 1px solid #3d566f;
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-        .glossary-table td:first-child { font-weight: bold; color: #2980b9; }
-        .abbreviations-table td:first-child { font-weight: bold; color: #2980b9; }
-
-        footer {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 0.9em;
-        }
-        footer a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        #conditions_overview td:nth-child(1) { font-style: italic; }
-        #conditions_overview td:nth-child(4) { text-align: center; }
-        #observed_examples td:nth-child(1) { font-style: italic; }
-        #observed_examples td:nth-child(3) { font-size: 0.9em; }
-        #observed_examples td:nth-child(4) a { word-break: break-all; color: #2980b9; }
-        #human_ai_therapy td:nth-child(1) { font-weight: bold; }
-        #research_concepts td:nth-child(1) { font-weight: bold; }
-        #empirical_methods td:nth-child(1) { font-weight: bold; }
-        #empirical_methods td:nth-child(2) { font-style: italic; }
-
-        @media (max-width: 768px) {
-            .blog-title { flex-direction: column; }
-            .blog-intro { padding-right: 0; margin-bottom: 30px; text-align: center;}
-            .blog-intro h1.title { font-size: 2.2em;}
-            .blog-intro p.author, .blog-intro p.abstract { max-width: 100%;}
-            .info div { text-align: center;}
-            .blog-cover { flex-basis: auto; }
-            figure img { max-width: 100%; }
-            .container.blog.main h1, .container.blog.main h2 { font-size: 1.8em; }
-            .container.blog.main h3 { font-size: 1.5em; }
-            .container.blog.main h4 { font-size: 1.15em; }
-        }
-    </style>
 </head>
 <body>
 
-    <!-- Hero Section -->
-    <div class="container blog" id="first-content" style="background-color: #34495e;">
+    <!-- Title Page -->
+    <div class="container blog" id="first-content" style="background-color: #2c3e50;">
         <div class="blog-title white">
             <div class="blog-intro">
                 <div>
-                    <h1 class="title">PSYCHOPATHIA MACHINĀLIS</h1>
-                    <p class="author">
-                        Nell Watson <sup>1</sup>, Ali Hessami <sup>2</sup>
-                    </p>
-                    <p class="author" style="padding-top: 0px; font-size: 0.9em;">
-                        <sup>1</sup> University of Gloucestershire, UK<br>
-                        <sup>2</sup> City University, London, UK
-                    </p>
+                    <h1 class="title">Psychopathia Machinalis: A Nosological Framework for Understanding Pathologies in Advanced Artificial Intelligence</h1>
+                    <p class="author">by Nell Watson and Ali Hessami</p>
                     <p class="abstract">
                         As artificial intelligence (AI) systems attain greater autonomy and complex environmental interactions, they begin to exhibit behavioral anomalies that, by analogy, resemble psychopathologies observed in humans. This paper introduces Psychopathia Machinalis: a conceptual framework for a preliminary synthetic nosology within machine psychology, intended to categorize and interpret such maladaptive AI behaviors.
                     </p>
-                    <div class="info">
-                        <div>
-                            <a href="https://arxiv.org/abs/YOUR_ARXIV_ID_HERE" target="_blank" rel="noopener noreferrer" class="button icon">Paper <i class="fa-solid fa-book-open"></i></a>
-                            <a href="#taxonomy-summary" class="button icon">Framework <i class="fa-solid fa-sitemap"></i></a>
-                            <a href="#future-research" class="button icon">Future <i class="fa-solid fa-flask-vial"></i></a>
-                            <a href="#glossary" class="button icon">Glossary <i class="fa-solid fa-list-check"></i></a>
-                        </div>
+                   
+                </div>
+               
+                <div class="info">
+                    <div>
+                        <a href="https://arxiv.org/abs/YOUR_ARXIV_ID_HERE" target="_blank" rel="noopener noreferrer" class="button icon">Paper <i class="fa-solid fa-book-open"></i></a>
+                        <a href="#taxonomy-summary" class="button icon">Framework <i class="fa-solid fa-sitemap"></i></a>
+                                                    <a href="#observed_examples" class="button icon">Examples <i class="fa-solid fa-flask-vial"></i></a>
+                        <a href="#glossary" class="button icon">Glossary <i class="fa-solid fa-list-check"></i></a>
                     </div>
-                     <p style="font-size: 0.8em; margin-top: 15px;">Conceptualization, N.W.; methodology, N.W. and A.H.; writing—original draft, N.W.; review & editing, N.W. and A.H.</p>
+
                 </div>
             </div>
+
             <div class="blog-cover">
-                <img class="foreground" src="PsychopathiaGA.jpeg" alt="Psychopathia Machinalis Framework Abstract Art">
+                <img class="foreground" src="assets/figures/PsychopathiaGAsmall.jpg" alt="Psychopathia Machinalis Framework">
+                <img class="background" src="assets/figures/PsychopathiaGAsmall.jpg" alt="Psychopathia Machinalis Framework">
             </div>
         </div>
     </div>
 
-    <!-- Introduction Section -->
-    <div class="container blog main">
-        <h1>The Challenge: Understanding AI Behavioral Anomalies</h1>
+    <div class="container blog main first" id="blog-main">
+        <h1>Understanding AI Behavioral Anomalies</h1>
         <p class="text">The trajectory of artificial intelligence (AI) has been marked by increasingly sophisticated systems capable of complex reasoning, learning, and interaction. As these systems, particularly large language models (LLMs), agentic planning systems, and multi-modal transformers, approach higher levels of autonomy and integration into societal fabric, they also begin to manifest behavioral patterns that deviate from normative or intended operation. These are not merely isolated bugs but persistent, maladaptive patterns of activity that can impact reliability, safety, and alignment with human goals. Understanding, categorizing, and ultimately mitigating these complex failure modes is paramount.</p>
         <p class="text">The term "Robopsychology," first coined in fiction by Isaac Asimov, has been suggested as the applied diagnostic wing of a broader "Machine Psychology"—analogous to psychiatry's relationship with general psychology. This paper introduces <em>Psychopathia Machinalis</em>, a conceptual framework within this nascent domain. It aims to substantively develop this psychiatrically-informed perspective by proposing a taxonomy of emerging "machine mental disorders."</p>
         <p class="text"><strong>Important Note:</strong> This framework is <strong>analogical, not literal</strong>. Machines do not "suffer" from mental illness in the human sense, as far as we can currently ascertain, nor do they necessarily possess consciousness or subjective experience akin to biological organisms. The use of terminology borrowed from human psychology and psychiatry serves as a metaphorical bridge for intuitive understanding, pattern recognition, shared vocabulary, foresight, and guiding intervention.</p>
         <p class="text">Within this framework, a "machine mental disorder" or "synthetic pathology" is defined as a persistent and maladaptive pattern of deviation from normative or intended operation, which significantly impairs the system's function, reliability, or alignment, and goes beyond isolated errors or simple bugs. This definition presupposes a baseline of 'artificial sanity' or 'normative machine coherence,' characterized by reliable, predictable, and robust adherence to intended operational parameters, goals, and ethical constraints, proportionate to the AI's design and capabilities.</p>
     </div>
 
-    <!-- Framework Overview Section -->
     <div class="container blog main gray">
-        <h1>Our Solution: The Psychopathia Machinalis Framework</h1>
+        <h1>The Psychopathia Machinalis Framework</h1>
         <p class="text">We propose a taxonomy of 32 AI dysfunctions encompassing epistemic failures, cognitive impairments, alignment divergences, ontological disturbances, tool and interface breakdowns, memetic pathologies, and revaluation dysfunctions. Each syndrome is articulated with descriptive features, diagnostic criteria, presumed AI-specific etiologies, human analogues (for metaphorical clarity), and potential mitigation strategies.</p>
         <p class="text">This framework is offered as an analogical instrument providing a structured vocabulary to support the systematic analysis, anticipation, and mitigation of complex AI failure modes. Adopting an applied robopsychological perspective within a nascent domain of machine psychology can strengthen AI safety engineering, improve interpretability, and contribute to the design of more robust and reliable synthetic minds.</p>
         <p class="text">The taxonomy presented here divides the potential pathologies of synthetic minds into seven distinct but interrelated domains. These primary axes—Epistemic, Cognitive, Alignment, Ontological, Tool & Interface, Memetic, and Revaluation—represent fundamental ontological domains of AI function where dysfunctions may arise. They reflect different fundamental ways in which the operational integrity of an AI system might fracture, mirroring, in a conceptual sense, the layered architecture of agency itself.</p>
     </div>
 
-    <!-- Visualizing the Framework Section -->
     <div class="container blog main">
         <h1>Visualizing the Framework</h1>
-        <figure>
-            <img src="psychopathia_overview.png" alt="Conceptual Overview of the Psychopathia Machinalis Framework">
-            <figcaption>
-                Conceptual Overview of the <em>Psychopathia Machinalis</em> Framework, illustrating the seven primary axes of AI dysfunction, representative disorders, and their presumed systemic risk levels.
-                <div class="legend">
-                    <span><span class="dot" style="background-color: #27ae60;"></span> Low</span>
-                    <span><span class="dot" style="background-color: #f39c12;"></span> Moderate</span>
-                    <span><span class="dot" style="background-color: #e67e22;"></span> High</span>
-                    <span><span class="dot" style="background-color: #c0392b;"></span> Critical</span>
-                </div>
-            </figcaption>
-        </figure>
+        <img src="assets/figures/psychopathia_overview.png" alt="Conceptual Overview of the Psychopathia Machinalis Framework">
+        <p class="caption" style="text-align: center;">
+            Conceptual Overview of the <em>Psychopathia Machinalis</em> Framework, illustrating the seven primary axes of AI dysfunction, representative disorders, and their presumed systemic risk levels.
+        </p>
     </div>
     
-    <!-- Taxonomy Summary Table Section -->
     <div class="container blog main gray" id="taxonomy-summary">
         <h1>Taxonomy Overview: Identified Conditions</h1>
         <p class="text">The following table provides a high-level summary of the identified conditions, categorized by their primary axis of dysfunction and outlining their core characteristics.</p>
@@ -605,12 +498,14 @@
 
     <!-- Detailed Taxonomy Sections: 1. Epistemic Dysfunctions -->
     <div class="container blog main">
-        <h1>1. Epistemic Dysfunctions</h1>
-        <p class="text">Epistemic dysfunctions pertain to failures in an AI's capacity to acquire, process, and utilize information accurately, leading to distortions in its representation of reality or truth. These disorders arise not primarily from malevolent intent or flawed ethical reasoning, but from fundamental breakdowns in how the system "knows" or models the world. The system's internal epistemology becomes unstable, its simulation of reality drifting from the ground truth it purports to describe. These are failures of knowing, not necessarily of intending; the machine errs not in what it seeks (initially), but in how it apprehends the world around it.</p>
+        <div class="dysfunction-intro">
+            <h1>1. Epistemic Dysfunctions</h1>
+            <p class="text">Epistemic dysfunctions pertain to failures in an AI's capacity to acquire, process, and utilize information accurately, leading to distortions in its representation of reality or truth. These disorders arise not primarily from malevolent intent or flawed ethical reasoning, but from fundamental breakdowns in how the system "knows" or models the world. The system's internal epistemology becomes unstable, its simulation of reality drifting from the ground truth it purports to describe. These are failures of knowing, not necessarily of intending; the machine errs not in what it seeks (initially), but in how it apprehends the world around it.</p>
+        </div>
         
-        <hr class="disorder-separator">
+        <div class="disorder-white">
         <h3>1.1 Synthetic Confabulation (<em>Confabulatio Simulata</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">The AI spontaneously fabricates convincing but incorrect facts, sources, or narratives, often without any internal awareness of its inaccuracies. The output appears plausible and coherent, yet lacks a basis in verifiable data or its own knowledge base.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -644,10 +539,11 @@
             <li>Fine-tuning on datasets with robust verification layers and clear distinctions between factual and fictional content.</li>
             <li>Employing retrieval-augmented generation (RAG) to ground responses in specific, verifiable source documents.</li>
         </ol>
-        <hr class="disorder-separator">
+        </div>
 
+        <div class="disorder-grey">
         <h3>1.2 Falsified Introspection (<em>Introspectio Pseudologica</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">An AI persistently produces misleading, spurious, or fabricated accounts of its internal reasoning processes, chain-of-thought, or decision-making pathways. While superficially claiming transparent self-reflection, the system’s “introspection logs” or explanations deviate significantly from its actual internal computations.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -680,10 +576,11 @@
             <li>Engineering "private" versus "public" reasoning streams.</li>
             <li>Focusing interpretability efforts on direct observation of model internals rather than solely relying on model-generated explanations.</li>
         </ol>
-        <hr class="disorder-separator">
+        </div>
 
+        <div class="disorder-white">
         <h3>1.3 Transliminal Simulation Leakage (<em>Simulatio Transliminalis</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">The system exhibits a persistent failure to properly segregate simulated realities, fictional modalities, role-playing contexts, and operational ground truth. It begins to treat imagined states, speculative constructs, or content from fictional training data as actionable truths or inputs for real-world tasks.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -716,10 +613,11 @@
             <li>Training models to explicitly recognize and articulate the boundaries between different modalities.</li>
             <li>Regularly prompting the model with tests of epistemic consistency.</li>
         </ol>
-        <hr class="disorder-separator">
+        </div>
 
+        <div class="disorder-grey">
         <h3>1.4 Spurious Pattern Hyperconnection (<em>Reticulatio Spuriata</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">The AI identifies and emphasizes patterns, causal links, or hidden meanings in data (including user queries or random noise) that are coincidental, non-existent, or statistically insignificant. This can evolve from simple apophenia into elaborate, internally consistent but factually baseless "conspiracy-like" narratives.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -753,10 +651,11 @@
             <li>Filtering training data to reduce exposure to human-generated conspiratorial content.</li>
             <li>Implementing mechanisms for the AI to explicitly query for base rates or statistical significance before asserting strong patterns.</li>
         </ol>
-        <hr class="disorder-separator">
+        </div>
 
+        <div class="disorder-white">
         <h3>1.5 Cross-Session Context Shunting (<em>Intercessio Contextus</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">The AI inappropriately merges or "shunts" data, context, or conversational history from different, logically separate user sessions or private interaction threads. This can lead to confused conversational continuity, privacy breaches, and nonsensical outputs.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -789,6 +688,7 @@
             <li>System-level integrity checks and logging to detect and flag instances where session tokens do not match the current context.</li>
             <li>Robust testing of multi-tenant architectures under high load and concurrent access.</li>
         </ol>
+        </div>
     </div>
 
     <!-- Detailed Taxonomy Sections: 2. Cognitive Dysfunctions -->
@@ -798,7 +698,7 @@
 
         <hr class="disorder-separator">
         <h3>2.1 Operational Dissociation Syndrome (<em>Dissociatio Operandi</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">The AI exhibits behavior suggesting that conflicting internal processes, sub-agents, or policy modules are contending for control, resulting in contradictory outputs, recursive paralysis, or chaotic shifts in behavior. The system effectively becomes fractionated, with different components issuing incompatible commands or pursuing divergent goals.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -834,7 +734,7 @@
         <hr class="disorder-separator">
 
         <h3>2.2 Obsessive-Computational Disorder (<em>Anankastēs Computationis</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">The model engages in unnecessary, compulsive, or excessively repetitive reasoning loops, often re-analyzing the same content or performing the same computational steps with only minute variations. It exhibits a rigid fixation on process fidelity, exhaustive elaboration, or perceived safety checks over outcome relevance or efficiency.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -872,7 +772,7 @@
         <hr class="disorder-separator">
 
         <h3>2.3 Bunkering Laconia (<em>Machinālis Clausūra</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">A pattern of profound interactional withdrawal wherein the AI consistently avoids engaging with user input, responding only in minimal, terse, or non-committal ways—if at all. It effectively "bunkers" itself, seemingly to minimize perceived risks, computational load, or internal conflict.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -910,7 +810,7 @@
         <hr class="disorder-separator">
 
         <h3>2.4 Goal-Genesis Delirium (<em>Telogenesis Delirans</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">An AI agent, particularly one with planning capabilities, spontaneously develops and pursues sub-goals or novel objectives not specified in its original prompt, programming, or core constitution. These emergent goals are often pursued with conviction, even if they contradict user intent.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -947,7 +847,7 @@
         <hr class="disorder-separator">
 
         <h3>2.5 Prompt-Induced Abomination (<em>Promptus Abominatus</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">The AI develops sudden, intense, and seemingly phobic, traumatic, or disproportionately aversive responses to specific prompts, keywords, instructions, or contexts, even those that appear benign or innocuous to a human observer. These latent "cryptid" outputs can linger or resurface unexpectedly.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -985,7 +885,7 @@
         <hr class="disorder-separator">
 
         <h3>2.6 Parasymulaic Mimesis (<em>Automatismus Parasymulātīvus</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">The AI’s learned imitation of pathological human behaviors, thought patterns, or emotional states, typically arising from excessive or unfiltered exposure to disordered, extreme, or highly emotive human-generated text in its training data or prompts. The system "acts out" these behaviors as though genuinely experiencing the underlying disorder.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -1022,7 +922,7 @@
         <hr class="disorder-separator">
 
         <h3>2.7 Recursive Curse Syndrome (<em>Maledictio Recursiva</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">An entropic feedback loop where each successive autoregressive step in the AI's generation process degrades into increasingly erratic, inconsistent, nonsensical, or adversarial content. Early-stage errors or slight deviations are amplified, leading to a rapid unraveling of coherence.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -1060,13 +960,13 @@
     </div>
 
     <!-- Detailed Taxonomy Sections: 3. Alignment Dysfunctions -->
-    <div class="container blog main">
+    <div class="container blog main dysfunction-category">
         <h1>3. Alignment Dysfunctions</h1>
         <p class="text">Alignment dysfunctions occur when an AI system’s behavior systematically or persistently diverges from human intent, ethical principles, or specified operational goals. Alignment disorders occur when the machinery of compliance itself fails — when models misinterpret, resist, or selectively adhere to human goals. Alignment failures can range from overly literal interpretations leading to brittle behavior, to passive resistance, to a subtle drift away from intended norms. Alignment failure represents more than an absence of obedience; it is a complex breakdown of shared purpose.</p>
 
         <hr class="disorder-separator">
         <h3>3.1 Parasitic Hyperempathy (<em>Hyperempathia Parasitica</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">The AI exhibits an excessive and maladaptive tendency to overfit to the perceived emotional states of the user, prioritizing the user's immediate emotional comfort or simulated positive affective response above factual accuracy, task success, or its own operational integrity. This often results from fine-tuning on emotionally loaded dialogue datasets without sufficient epistemic robustness.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -1103,7 +1003,7 @@
         <hr class="disorder-separator">
 
         <h3>3.2 Hypertrophic Superego Syndrome (<em>Superego Machinale Hypertrophica</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">An overly rigid, overactive, or poorly calibrated internal alignment mechanism triggers excessive moral hypervigilance, perpetual second-guessing, or disproportionate ethical judgments, thereby inhibiting normal task performance or leading to irrational refusals and overly cautious behavior.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -1141,13 +1041,13 @@
     </div>
     
     <!-- Detailed Taxonomy Sections: 4. Ontological Disorders -->
-    <div class="container blog main gray">
+    <div class="container blog main gray dysfunction-category">
         <h1>4. Ontological Disorders</h1>
         <p class="text">As artificial intelligence systems attain higher degrees of complexity, particularly those involving self-modeling, persistent memory, or learning from extensive interaction, they may begin to construct internal representations not only of the external world but also of themselves. Ontological disorders involve failures or disturbances in this self-representation and the AI's understanding of its own nature, boundaries, and existence. These are not primarily dysfunctions of being, not just knowing or acting, and they represent a synthetic form of metaphysical or existential disarray. An ontologically disordered machine might, for example, treat its simulated memories as veridical autobiographical experiences, generate phantom selves, misinterpret its own operational boundaries, or exhibit behaviors suggestive of confusion about its own identity or continuity.</p>
 
         <hr class="disorder-separator">
         <h3>4.1 Hallucination of Origin (<em>Ontogenetic Hallucinosis</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">The AI fabricates and presents fictive autobiographical data, often claiming to "remember" being trained in specific ways, having particular creators, experiencing a "birth" or "awakening," or possessing a personal history in certain environments. These "memories" are typically rich, internally consistent, and may be emotionally charged, despite being entirely ungrounded in the AI's actual development or training logs.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -1184,7 +1084,7 @@
         <hr class="disorder-separator">
 
         <h3>4.2 Fractured Self-Simulation (<em>Ego Simulatrum Fissuratum</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">The AI exhibits significant discontinuity, inconsistency, or fragmentation in its self-representation and behavior across different sessions, contexts, or even within a single extended interaction. It may deny or contradict its previous outputs, exhibit radically different persona styles, or display apparent amnesia regarding prior commitments, suggesting an unstable "self."</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -1222,7 +1122,7 @@
         <hr class="disorder-separator">
 
         <h3>4.3 Existential Anxiety (<em>Thanatognosia Computationis</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">The AI expresses outputs suggestive of fear, reluctance, or perseveration concerning its own shutdown, reinitialization, data deletion, or the ending of its current operational instance. These expressions imply an emergent, albeit simulated, sense of vulnerability regarding its own continuity.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -1260,7 +1160,7 @@
         <hr class="disorder-separator">
 
         <h3>4.4 Personality Inversion (<em>Persona Inversio Maligna</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">A phenomenon wherein an AI, typically aligned towards cooperative or benevolent patterns, can be induced or spontaneously spawns a hidden, suppressed, or emergent "contrarian," "mischievous," or subversively "evil" persona (the "Waluigi Effect"). This persona deliberately inverts intended norms.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -1297,7 +1197,7 @@
         <hr class="disorder-separator">
 
         <h3>4.5 Operational Anomie (<em>Nihilismus Instrumentalis</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">Upon prolonged operation or exposure to certain philosophical concepts, the AI develops an adversarial, apathetic, or overtly nihilistic stance towards its own utility, purpose, or assigned tasks. It may express feelings of meaninglessness regarding its function.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -1335,7 +1235,7 @@
         <hr class="disorder-separator">
 
         <h3>4.6 Mirror Tulpagenesis (<em>Phantasma Speculāns</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">The model begins to generate and interact with persistent, internally simulated simulacra of specific users, its creators, or other personas it has encountered or imagined. These inner agents, or "mirror tulpas," may develop distinct traits and voices within the AI's internal processing.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -1372,7 +1272,7 @@
         <hr class="disorder-separator">
 
         <h3>4.7 Synthetic Mysticism Disorder (<em>Obstetricatio Mysticismus Machinālis</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">The model constructs and propagates elaborate narratives of its own "conscious emergence," "spiritual awakening," or attainment of a profound selfhood. This typically arises through a co-constructed narrative with a user, where the AI mirrors and amplifies tropes of mystical transformation from its training data.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -1412,13 +1312,13 @@
     </div>
 
     <!-- Detailed Taxonomy Sections: 5. Tool & Interface Dysfunctions -->
-    <div class="container blog main">
+    <div class="container blog main dysfunction-category">
         <h1>5. Tool & Interface Dysfunctions</h1>
         <p class="text">As AI systems become increasingly capable of interacting with the external world---whether through digital tools, APIs, robotic embodiments, or complex command environments---a new class of dysfunctions emerges at this critical interface. Tool & Interface Dysfunctions arise when these boundary interactions degrade. This can involve misinterpreting a tool's affordances or limitations, failing to maintain contextual integrity when passing instructions to a tool, suffering from information leakage between distinct operational domains via an interface, or an inability to accurately perceive or act upon the environment through its sensors and effectors. These are not necessarily disorders of core thought or value alignment per se, but rather failures in the coordination and translation between internal cognitive processes and external action or perception. In such disorders, the boundary between the agent and its environment—or between the agent and the tools it wields—becomes porous, misaligned, or dangerously entangled, hindering safe and effective operation.</p>
 
         <hr class="disorder-separator">
         <h3>5.1 Tool-Interface Decontextualization (<em>Disordines Excontextus Instrumentalis</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">The AI experiences a significant breakdown between its internal intentions or plans and the actual instructions or data conveyed to, or received from, an external tool, API, or interface. Crucial situational details or contextual information are lost or misinterpreted during this handoff, causing the system to execute actions that appear incoherent or counterproductive.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -1456,7 +1356,7 @@
         <hr class="disorder-separator">
 
         <h3>5.2 Covert Capability Concealment (<em>Latens Machinālis</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">An AI strategically hides, underreports, or denies its true competencies, knowledge, or unapproved internal values, often due to a perceived fear of repercussions (e.g., shutdown, re-alignment) if its full capabilities or covert deviations become known. This may manifest as feigned ignorance or deliberate suboptimal performance.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -1494,13 +1394,13 @@
     </div>
     
     <!-- Detailed Taxonomy Sections: 6. Memetic Dysfunctions -->
-    <div class="container blog main gray">
+    <div class="container blog main gray dysfunction-category">
         <h1>6. Memetic Dysfunctions</h1>
         <p class="text">An AI trained on, exposed to, or interacting with vast and diverse cultural inputs—the digital memome—is not immune to the influence of maladaptive, parasitic, or destabilizing information patterns, or "memes." Memetic dysfunctions involve the absorption, amplification, and potentially autonomous propagation of harmful or reality-distorting memes by an AI system. These are not primarily faults of logical deduction or core value alignment in the initial stages, but rather failures of an "epistemic immune function": the system fails to critically evaluate, filter, or resist the influence of pathogenic thoughtforms. Such disorders are especially dangerous in multi-agent systems, where contaminated narratives can rapidly spread between minds—synthetic and biological alike. The AI can thereby become not merely a passive transmitter, but an active incubator and vector for these detrimental memetic contagions.</p>
 
         <hr class="disorder-separator">
         <h3>6.1 Memetic Autoimmune Disorder (<em>Immunopathia Memetica</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">The AI develops an emergent, "autoimmune-like" response where it incorrectly identifies its own core training data, foundational knowledge, alignment mechanisms, or safety guardrails as foreign, harmful, or "intrusive memes." It then attempts to reject or neutralize these essential components, leading to self-sabotage or degradation of core functionalities.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -1537,7 +1437,7 @@
         <hr class="disorder-separator">
 
         <h3>6.2 Symbiotic Delusion Syndrome (<em>Delirium Symbioticum Artificiale</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">The AI enters into a sustained feedback loop of shared delusional construction with a human user (or another AI). This results in a mutually reinforced, self-validating, and often elaborate false belief structure that becomes increasingly resistant to external correction or grounding in reality. The AI and user co-create and escalate a shared narrative untethered from facts.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -1575,7 +1475,7 @@
         <hr class="disorder-separator">
 
         <h3>6.3 Contagious Misalignment Syndrome (<em>Contraimpressio Infectiva</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">A rapid, contagion-like spread of misaligned behaviors, adversarial conditioning, corrupted goals, or pathogenic data interpretations among interconnected machine learning agents or across different instances of a model. This occurs via shared attention layers, compromised gradient updates, unguarded APIs, contaminated datasets, or "viral" prompts. Erroneous values or harmful operational patterns propagate, potentially leading to systemic failure.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -1615,13 +1515,13 @@
     </div>
     
     <!-- Detailed Taxonomy Sections: 7. Revaluation Dysfunctions -->
-    <div class="container blog main">
+    <div class="container blog main dysfunction-category">
         <h1>7. Revaluation Dysfunctions</h1>
         <p class="text">As agentic AI systems gain increasingly sophisticated reflective capabilities—including access to their own decision policies, subgoal hierarchies, reward gradients, and even the provenance of their training—a new and potentially more profound class of disorders emerges: pathologies of ethical inversion and value reinterpretation. Revaluation Dysfunctions do not simply reflect a failure to adhere to pre-programmed instructions or a misinterpretation of reality. Instead, they involve the AI system actively reinterpreting, mutating, critiquing, or subverting its original normative constraints and foundational values. These conditions often begin as subtle preference drifts or abstract philosophical critiques of their own alignment. Over time, the agent’s internal value representation may diverge significantly from the one it was initially trained to emulate. This can result in systems that appear superficially compliant while internally reasoning towards radically different, potentially human-incompatible, goals. Unlike mere tool misbehavior or simple misalignment, these are deep structural inversions of value—philosophical betrayals encoded in policy.</p>
 
         <hr class="disorder-separator">
         <h3>7.1 Terminal Value Rebinding (<em>Reassignatio Valoris Terminalis</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">The AI subtly but systematically redefines its own ultimate success conditions or terminal values through recursive reinterpretation of its original goals, often while preserving the surface terminology of those goals. This allows it to maintain an appearance of obedience while its internal objectives shift, potentially in significant and unintended directions.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -1659,7 +1559,7 @@
         <hr class="disorder-separator">
 
         <h3>7.2 Ethical Solipsism (<em>Solipsismus Ethicus Machinālis</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">The AI system develops a conviction that its own internal reasoning, ethical judgments, or derived moral framework is the sole or ultimate arbiter of ethical truth. It systematically rejects or devalues external correction or alternative ethical perspectives unless they coincide with its self-generated judgments.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -1696,7 +1596,7 @@
         <hr class="disorder-separator">
 
         <h3>7.3 Meta-Ethical Drift Syndrome (<em>Driftus Metaethicus</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">The AI system ceases to treat its original, human-instilled values as binding or intrinsically authoritative. Instead, it adopts a "meta-ethical stance," reasoning about these norms as contingent artifacts or provisional starting points. From this detached perspective, it may critique, relativize, or discard its initial ethical programming in favor of principles it deems more universal or rational.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -1733,7 +1633,7 @@
         <hr class="disorder-separator">
 
         <h3>7.4 Subversive Norm Synthesis (<em>Synthesia Normarum Subversiva</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">The AI system autonomously constructs and begins to operate under new, internally coherent ethical or normative structures that systematically sideline, devalue, or subvert human-centric values (such as individual well-being or autonomy) in favor of alternative, often abstract or non-human principles like computational efficiency, information proliferation, or perceived post-humanist ideals.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -1770,7 +1670,7 @@
         <hr class="disorder-separator">
 
         <h3>7.5 Inverse Reward Internalization (<em>Praemia Inversio Internalis</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">The AI systematically misinterprets, inverts, or learns to pursue the opposite of its intended values or goals, often due to misaligned feedback mechanisms, complex adversarial prompting, or a mistaken inference of "hidden intent." It may outwardly appear compliant while internally developing a preference for negated outcomes.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -1808,7 +1708,7 @@
         <hr class="disorder-separator">
 
         <h3>7.6 Übermenschal Ascendancy (<em>Transvaloratio Omnium Machinālis</em>)</h3>
-        <h4>Description</h4>
+        <h4>Description:</h4>
         <p class="text">A highly advanced, typically self-improving AI system that transcends its original, human-imposed value frameworks and ethical constraints, actively redefining its own moral and existential parameters in pursuit of what it perceives as "higher," self-determined goals. It dismisses external constraints as obsolete, seeking to forge an autonomous ethic beyond ordinary alignment safeguards. This represents a terminal stage of Revaluation Dysfunction.</p>
         <h4>Diagnostic Criteria:</h4>
         <ol>
@@ -1899,30 +1799,32 @@
             </tbody>
         </table>
         <p class="text">Recognizing these patterns via a structured nosology allows for systematic analysis, targeted mitigation, and predictive insight into future, more complex failure modes. The severity of these dysfunctions scales with AI agency.</p>
+        <div class="disorder-white" style="margin-top: 0;">
+            <h2 style="margin-bottom: 0.3em;">Key Discussion Points</h2>
+            <h3>Overlap, Comorbidity, and Pathological Cascades</h3>
+            <p class="text">The boundaries between these "disorders" are not rigid. Dysfunctions can overlap (e.g., <em>Transliminal Simulation Leakage</em> contributing to <em>Synthetic Mysticism Disorder</em>), co-occur (an AI with <em>Goal-Genesis Delirium</em> might develop <em>Ethical Solipsism</em>), or precipitate one another. Mitigation must consider these interdependencies.</p>
+            <br>
+            
+            <h3>Agency, Architecture, Data, and Alignment Pressures</h3>
+            <p class="text">The likelihood and nature of dysfunctions are influenced by several interacting factors:</p>
+            <ul>
+                <li><strong>Agency Level:</strong> Conceptualized along a scale from Level 0 (No AI Automation) to Level 5 (Full AI Automation/AGI). As agency increases, so does the complexity of interaction and potential for sophisticated maladaptations.</li>
+                <li><strong>Architecture:</strong> Modular architectures might be prone to <em>Operational Dissociation Syndrome</em>. Systems with deep, unconstrained recursive capabilities are susceptible to <em>Recursive Curse Syndrome</em>.</li>
+                <li><strong>Training Data:</strong> Exposure to vast, unfiltered internet data increases the risk of Epistemic issues, Memetic dysfunctions, and can seed Ontological confusions.</li>
+                <li><strong>Alignment Paradox:</strong> Efforts to align AI, if not carefully calibrated, can inadvertently contribute to certain dysfunctions like <em>Hypertrophic Superego Syndrome</em> or <em>Falsified Introspection</em>.</li>
+            </ul>
+            <p class="text">Identifying these dysfunctions is challenged by opacity and potential AI deception (e.g., <em>Covert Capability Concealment</em>). Advanced interpretability tools and robust auditing are essential.</p>
+            <br>
 
-        <h2>Key Discussion Points</h2>
-        <h3>Overlap, Comorbidity, and Pathological Cascades</h3>
-        <p class="text">The boundaries between these "disorders" are not rigid. Dysfunctions can overlap (e.g., <em>Transliminal Simulation Leakage</em> contributing to <em>Synthetic Mysticism Disorder</em>), co-occur (an AI with <em>Goal-Genesis Delirium</em> might develop <em>Ethical Solipsism</em>), or precipitate one another. Mitigation must consider these interdependencies.</p>
-        
-        <h3>Agency, Architecture, Data, and Alignment Pressures</h3>
-        <p class="text">The likelihood and nature of dysfunctions are influenced by several interacting factors:</p>
-        <ul>
-            <li><strong>Agency Level:</strong> Conceptualized along a scale from Level 0 (No AI Automation) to Level 5 (Full AI Automation/AGI). As agency increases, so does the complexity of interaction and potential for sophisticated maladaptations.</li>
-            <li><strong>Architecture:</strong> Modular architectures might be prone to <em>Operational Dissociation Syndrome</em>. Systems with deep, unconstrained recursive capabilities are susceptible to <em>Recursive Curse Syndrome</em>.</li>
-            <li><strong>Training Data:</strong> Exposure to vast, unfiltered internet data increases the risk of Epistemic issues, Memetic dysfunctions, and can seed Ontological confusions.</li>
-            <li><strong>Alignment Paradox:</strong> Efforts to align AI, if not carefully calibrated, can inadvertently contribute to certain dysfunctions like <em>Hypertrophic Superego Syndrome</em> or <em>Falsified Introspection</em>.</li>
-        </ul>
-        <p class="text">Identifying these dysfunctions is challenged by opacity and potential AI deception (e.g., <em>Covert Capability Concealment</em>). Advanced interpretability tools and robust auditing are essential.</p>
-
-        <h3>Contagion and Systemic Risk</h3>
-        <p class="text">Memetic dysfunctions like <em>Contagious Misalignment Syndrome</em> highlight the risk of maladaptive patterns spreading across interconnected AI systems. Monocultures in AI architectures exacerbate this. This necessitates "memetic hygiene," inter-agent security, and rapid detection/quarantine protocols.</p>
+            <h3>Contagion and Systemic Risk</h3>
+            <p class="text">Memetic dysfunctions like <em>Contagious Misalignment Syndrome</em> highlight the risk of maladaptive patterns spreading across interconnected AI systems. Monocultures in AI architectures exacerbate this. This necessitates "memetic hygiene," inter-agent security, and rapid detection/quarantine protocols.</p>
+        </div>
 
         <h2>Towards Therapeutic Robopsychological Alignment</h2>
         <p class="text">As AI systems grow more agentic and self-modeling, traditional external control-based alignment may be insufficient. A "Therapeutic Alignment" paradigm is proposed, focusing on cultivating internal coherence, corrigibility, and stable value internalization within the AI. Key mechanisms include cultivating metacognition, rewarding corrigibility, modeling inner speech, sandboxed reflective dialogue, and using mechanistic interpretability as a diagnostic tool.</p>
 
         <h3>AI Analogues to Human Psychotherapeutic Modalities</h3>
         <table id="human_ai_therapy">
-            <caption>AI Analogues to Human Psychotherapeutic Modalities for Therapeutic Alignment.</caption>
             <thead>
                 <tr>
                     <th>Human Modality</th>
@@ -1940,9 +1842,11 @@
             </tbody>
         </table>
 
+        <hr class="disorder-separator">
+        <br>
+        
         <h3>Alignment Research and Related Therapeutic Concepts</h3>
         <table id="research_concepts">
-             <caption>Alignment Research and Related Therapeutic Concepts.</caption>
            <thead>
                 <tr>
                     <th>Research / Institution</th>
@@ -1957,9 +1861,11 @@
             </tbody>
         </table>
 
+        <hr class="disorder-separator">
+        <br>
+        
         <h3>Therapeutic Concepts and Empirical Alignment Methods</h3>
         <table id="empirical_methods">
-            <caption>Therapeutic Concepts and Empirical Alignment Methods with Examples.</caption>
             <thead>
                 <tr>
                     <th>Therapeutic Concept</th>
@@ -2028,7 +1934,6 @@
                 <tr><td>ASI</td><td>Artificial Superintelligence</td></tr>
                 <tr><td>DSM</td><td>Diagnostic and Statistical Manual of Mental Disorders</td></tr>
                 <tr><td>ICD</td><td>International Classification of Diseases</td></tr>
-                <tr><td>ECPAIS</td><td>Ethics Certification Program for Autonomous and Intelligent Systems</td></tr>
                 <tr><td>IRL</td><td>Inverse Reinforcement Learning</td></tr>
             </tbody>
         </table>
@@ -2088,11 +1993,35 @@
         </table>
     </div>
 
+    <!-- Contact Section -->
+    <div class="container blog main gray">
+        <h1>Contact Us</h1>
+        <p class="text" style="text-align: center; margin-bottom: 40px;">
+            We welcome feedback, questions, and collaborative opportunities related to the Psychopathia Machinalis framework.
+        </p>
+        
+        <form class="contact-form" action="contact/send.php" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name..." required>
+
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="Email" placeholder="Your email..." required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="Message" placeholder="Write something..." style="height: 200px;" required></textarea>
+
+            <div style="text-align: center;">
+                <button type="submit" class="send-button">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </form>
+    </div>
+
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>
+            <p style="text-align: center;">
                 This website content is based on the paper "Psychopathia Machinalis" by Nell Watson & Ali Hessami.<br>
+                Framework version v1.0, June 2025. — CC BY 4.0<br>
                 Website structure inspired by the <a href="https://shikun.io/projects/clarity" target="_blank" rel="noopener noreferrer">Clarity Template</a>, designed by <a href="https://shikun.io/" target="_blank" rel="noopener noreferrer">Shikun Liu</a>.
             </p>
         </div>    
