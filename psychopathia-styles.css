@@ -500,13 +500,11 @@ pre {
     color: #2c3e50;
 }
 
-/* TEST: Blue styling for Diagnostic Criteria, Symptoms, and Etiology - same as mitigation */
+/* TEST: Blue styling for Diagnostic Criteria and Symptoms - same as mitigation */
 .disorder-white h4:contains("Diagnostic Criteria") + ol,
 .disorder-grey h4:contains("Diagnostic Criteria") + ol,
 .disorder-white h4:contains("Symptoms") + ol,
-.disorder-grey h4:contains("Symptoms") + ol,
-.disorder-white h4:contains("Etiology") + ol,
-.disorder-grey h4:contains("Etiology") + ol {
+.disorder-grey h4:contains("Symptoms") + ol {
     background: linear-gradient(90deg, rgba(220, 229, 235, 0.3), transparent);
     padding: 20px;
     border-radius: 6px;
@@ -516,10 +514,24 @@ pre {
 .disorder-white h4:contains("Diagnostic Criteria") + ol li:before,
 .disorder-grey h4:contains("Diagnostic Criteria") + ol li:before,
 .disorder-white h4:contains("Symptoms") + ol li:before,
-.disorder-grey h4:contains("Symptoms") + ol li:before,
+.disorder-grey h4:contains("Symptoms") + ol li:before {
+    background: #dce5eb;
+    color: #2c3e50;
+    border-radius: 3px;
+}
+
+/* TEST: Gray styling for Etiology - same structure as mitigation but different colors */
+.disorder-white h4:contains("Etiology") + ol,
+.disorder-grey h4:contains("Etiology") + ol {
+    background: linear-gradient(90deg, rgba(44, 62, 80, 0.06), transparent);
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid rgba(44, 62, 80, 0.12);
+}
+
 .disorder-white h4:contains("Etiology") + ol li:before,
 .disorder-grey h4:contains("Etiology") + ol li:before {
-    background: #dce5eb;
+    background: #e8e9ea;
     color: #2c3e50;
     border-radius: 3px;
 }
