@@ -1,0 +1,757 @@
+/* Psychopathia Machinalis - Custom Styles */
+
+/* Button styling - light blue theme for header navigation */
+.blog-title .info .button.icon {
+    background-color: #dce5eb !important;
+    color: #2c3e50 !important;
+    border: none;
+}
+
+.blog-title .info .button.icon:hover {
+    background-color: #c8d4db !important;
+    color: #2c3e50 !important;
+    opacity: 1 !important;
+}
+
+.blog-title .info .button.icon:active {
+    background-color: #b4c3cc !important;
+    color: #2c3e50 !important;
+    opacity: 1 !important;
+}
+
+.blog-title .info .button.icon i {
+    color: #2c3e50 !important;
+}
+
+/* Citation box styling */
+pre code.plaintext {
+    background-color: #2c3e50 !important;
+    color: #f8f8f2 !important;
+    border-radius: 12px !important;
+    padding: 25px !important;
+    border: 1px solid #3d566f !important;
+}
+
+/* Specific spacing for therapeutic tables */
+h3 + table#research_concepts {
+    margin-top: 0.5em !important;
+}
+
+h3 + table#empirical_methods {
+    margin-bottom: 0.3em !important;
+}
+
+/* Add extra spacing to the h3 headings themselves */
+table#research_concepts + h3 + table#empirical_methods {
+    margin-bottom: 0.3em !important;
+}
+
+/* More direct approach - add spacing around the specific tables */
+table#research_concepts {
+    margin-bottom: 0.3em !important;
+}
+
+table#empirical_methods {
+    margin-bottom: 0.3em !important;
+}
+
+/* Add space below the observed examples table caption */
+table#observed_examples caption {
+    margin-bottom: 1em !important;
+    padding-bottom: 1em !important;
+}
+
+/* Risk level indicators */
+.risk-low { color: #27ae60; font-weight: bold; } /* Green */
+.risk-moderate { color: #f39c12; font-weight: bold; } /* Orange-Yellow */
+.risk-high { color: #e67e22; font-weight: bold; } /* Darker Orange */
+.risk-critical { color: #c0392b; font-weight: bold; } /* Red */
+
+/* Legend styling */
+.legend { 
+    margin-top: 15px; 
+    margin-bottom: 20px; 
+    text-align: center;
+}
+.legend span { 
+    margin-right: 15px; 
+    font-size: 0.9em;
+}
+.legend .dot { 
+    height: 12px; 
+    width: 12px; 
+    border-radius: 50%; 
+    display: inline-block; 
+    margin-right: 5px; 
+    vertical-align: middle;
+}
+
+/* Disorder separator */
+hr.disorder-separator {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.15), rgba(0,0,0,0));
+    margin: 60px 0;
+}
+
+/* Footnote styling */
+.footnote { 
+    font-size: 0.85em; 
+    color: #666; 
+    margin-top: 10px; 
+}
+
+/* Table-specific styles */
+.glossary-table td:first-child { 
+    font-weight: bold; 
+    color: #2c3e50; 
+}
+.abbreviations-table td:first-child { 
+    font-weight: bold; 
+    color: #2c3e50; 
+}
+
+/* Specific table styling */
+#conditions_overview td:nth-child(1) { font-style: italic; }
+#conditions_overview td:nth-child(4) { text-align: center; }
+#observed_examples td:nth-child(1) { font-style: italic; }
+#observed_examples td:nth-child(3) { font-size: 0.9em; }
+#observed_examples td:nth-child(4) a { word-break: break-all; color: #2c3e50; }
+#human_ai_therapy td:nth-child(1) { font-weight: bold; }
+#research_concepts td:nth-child(1) { font-weight: bold; }
+#empirical_methods td:nth-child(1) { font-weight: bold; }
+#empirical_methods td:nth-child(2) { font-style: italic; }
+
+/* Code blocks for this paper */
+pre {
+    background-color: #2c3e50; 
+    color: #f8f8f2; 
+    padding: 20px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9em;
+    border: 1px solid #3d566f;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Dysfunction category intro boxes */
+.dysfunction-intro {
+    background-color: #2c3e50;
+    color: #f8f8f2;
+    padding: 30px;
+    border-radius: 8px;
+    margin: 20px 0 40px 0;
+    border: 1px solid #3d566f;
+}
+
+.dysfunction-intro h1 {
+    color: #f8f8f2 !important;
+    border-bottom: 2px solid #f8f8f2 !important;
+    margin-top: 0 !important;
+}
+
+.dysfunction-intro p {
+    color: #ecf0f1 !important;
+}
+
+/* Individual disorder alternating backgrounds */
+.disorder-white {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 25px 0;
+    border: 1px solid #e8e9ea;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+    transition: all 0.3s ease;
+}
+
+.disorder-grey {
+    background-color: #fbfcfd;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 25px 0;
+    border: 1px solid #e8e9ea;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+    transition: all 0.3s ease;
+}
+
+/* Auto-styling for disorder sections */
+.disorder-section {
+    padding: 25px;
+    border-radius: 6px;
+    margin: 20px 0;
+    border: 1px solid #e0e0e0;
+}
+
+.disorder-section:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.disorder-section:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Enhanced disorder styling */
+.disorder-white h3,
+.disorder-grey h3 {
+    color: #2c3e50 !important;
+    font-size: 1.35em;
+    font-weight: 700;
+    margin-bottom: 30px;
+    padding-bottom: 18px;
+    border-bottom: 3px solid #2c3e50;
+    background: linear-gradient(90deg, rgba(44, 62, 80, 0.06), transparent);
+    padding: 18px 24px;
+    margin: -30px -30px 30px -30px;
+    border-radius: 10px 10px 0 0;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+}
+
+.disorder-white h4,
+.disorder-grey h4 {
+    color: #2c3e50 !important;
+    font-size: 1.15em;
+    font-weight: 650;
+    margin-top: 30px;
+    margin-bottom: 18px;
+    position: relative;
+    padding-left: 35px;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+}
+
+/* Monochrome icons for section headers - 25% larger */
+.disorder-white h4:before,
+.disorder-grey h4:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2c3e50;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(44, 62, 80, 0.15);
+}
+
+/* Description icon - FontAwesome clipboard list */
+.disorder-white h4.description:before,
+.disorder-grey h4.description:before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f46d";
+    font-weight: 900;
+    color: #2c3e50;
+    background: none !important;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 25px;
+    width: 22px;
+    height: 22px;
+}
+
+/* Diagnostic icon - FontAwesome search */
+.disorder-white h4.diagnostic:before,
+.disorder-grey h4.diagnostic:before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f00e";
+    font-weight: 900;
+    color: #2c3e50;
+    background: none !important;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 25px;
+    width: 22px;
+    height: 22px;
+}
+
+.disorder-white h4.diagnostic:after,
+.disorder-grey h4.diagnostic:after {
+    display: none;
+}
+
+/* Symptoms icon - FontAwesome thermometer */
+.disorder-white h4.symptoms:before,
+.disorder-grey h4.symptoms:before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f2c7";
+    font-weight: 900;
+    color: #2c3e50;
+    background: none !important;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 25px;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+}
+
+.disorder-white h4.symptoms:after,
+.disorder-grey h4.symptoms:after {
+    display: none;
+}
+
+/* Etiology icon - FontAwesome DNA */
+.disorder-white h4.etiology:before,
+.disorder-grey h4.etiology:before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f471";
+    font-weight: 900;
+    color: #2c3e50;
+    background: none !important;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 25px;
+    width: 22px;
+    height: 22px;
+}
+
+/* Impact icon - FontAwesome warning triangle */
+.disorder-white h4.impact:before,
+.disorder-grey h4.impact:before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f071";
+    font-weight: 900;
+    color: #2c3e50;
+    background: none !important;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 25px;
+    width: 22px;
+    height: 22px;
+}
+
+.disorder-white h4.impact:after,
+.disorder-grey h4.impact:after {
+    display: none;
+}
+
+/* Mitigation icon - FontAwesome band-aid */
+.disorder-white h4.mitigation:before,
+.disorder-grey h4.mitigation:before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f462";
+    font-weight: 900;
+    color: #2c3e50;
+    background: none !important;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 25px;
+    width: 22px;
+    height: 22px;
+}
+
+/* Better list styling with monochrome bullets */
+.disorder-white ol,
+.disorder-grey ol {
+    margin: 18px 0;
+    padding-left: 35px;
+    list-style: none;
+    counter-reset: custom-counter;
+}
+
+.disorder-white ol li,
+.disorder-grey ol li {
+    margin-bottom: 14px;
+    line-height: 1.65;
+    color: #444;
+    position: relative;
+    counter-increment: custom-counter;
+    padding-left: 6px;
+    font-size: 0.98em;
+}
+
+.disorder-white ol li:before,
+.disorder-grey ol li:before {
+    content: counter(custom-counter);
+    position: absolute;
+    left: -35px;
+    top: 0px;
+    background: #2c3e50;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(44, 62, 80, 0.15);
+}
+
+/* Special styling for mitigation lists - blue theme */
+.disorder-white h4.mitigation + ol li:before,
+.disorder-grey h4.mitigation + ol li:before {
+    background: #dce5eb;
+    color: #2c3e50;
+    border-radius: 3px;
+}
+
+/* Alternative bullet styles for nested lists */
+.disorder-white ol ol li:before,
+.disorder-grey ol ol li:before {
+    content: '→';
+    background: transparent;
+    color: #2c3e50;
+    font-weight: bold;
+    border: 1px solid #2c3e50;
+    font-size: 12px;
+}
+
+/* Human analogue styling */
+.disorder-white p strong,
+.disorder-grey p strong {
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.disorder-white p.human-analogue,
+.disorder-grey p.human-analogue {
+    background: linear-gradient(90deg, rgba(44, 62, 80, 0.08), rgba(44, 62, 80, 0.02));
+    padding: 32px 40px !important;
+    margin: 22px 0;
+    border-radius: 8px;
+    font-style: italic;
+    position: relative;
+    line-height: 1.6;
+    font-size: 0.97em;
+    color: #555;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+    border: 1px solid rgba(44, 62, 80, 0.1);
+}
+
+/* Human analogue icon - removed */
+.disorder-white p.human-analogue:before,
+.disorder-grey p.human-analogue:before {
+    display: none;
+}
+
+/* Description, Impact and etiology special styling */
+.disorder-white h4 + p,
+.disorder-grey h4 + p,
+.disorder-white h4.description + p,
+.disorder-grey h4.description + p {
+    margin-top: 12px;
+    padding: 32px 40px;
+    background: rgba(44, 62, 80, 0.025);
+    border-radius: 8px;
+    line-height: 1.65;
+    font-size: 0.98em;
+    color: #444;
+    border: 1px solid rgba(44, 62, 80, 0.08);
+}
+
+/* Additional padding for any Description sections not caught by h4+p */
+.disorder-white h4.description ~ p:not(.human-analogue),
+.disorder-grey h4.description ~ p:not(.human-analogue) {
+    padding: 32px 40px;
+    background: rgba(44, 62, 80, 0.025);
+    border-radius: 8px;
+    border: 1px solid rgba(44, 62, 80, 0.08);
+}
+
+/* Ensure all paragraph content under disorder sections has minimum padding */
+.disorder-white p:not(.human-analogue),
+.disorder-grey p:not(.human-analogue) {
+    padding: 32px 40px;
+    background: rgba(44, 62, 80, 0.02);
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+
+/* Mitigation section styling - blue theme */
+.disorder-white h4:contains("Mitigation") + ol,
+.disorder-grey h4:contains("Mitigation") + ol {
+    background: linear-gradient(90deg, rgba(220, 229, 235, 0.3), transparent);
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid rgba(220, 229, 235, 0.5);
+}
+
+.disorder-white h4:contains("Mitigation") + ol li:before,
+.disorder-grey h4:contains("Mitigation") + ol li:before {
+    background: #dce5eb;
+    color: #2c3e50;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .disorder-white,
+    .disorder-grey {
+        padding: 24px 18px;
+        margin: 18px 0;
+        border-radius: 8px;
+    }
+    
+    .disorder-white h3,
+    .disorder-grey h3 {
+        font-size: 1.25em;
+        margin: -24px -18px 24px -18px;
+        padding: 15px 18px;
+        border-radius: 8px 8px 0 0;
+    }
+    
+    .disorder-white h4,
+    .disorder-grey h4 {
+        padding-left: 30px;
+        font-size: 1.08em;
+        margin-top: 26px;
+        margin-bottom: 16px;
+    }
+    
+    .disorder-white h4:before,
+    .disorder-grey h4:before {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .disorder-white ol,
+    .disorder-grey ol {
+        padding-left: 30px;
+        margin: 16px 0;
+    }
+    
+    .disorder-white ol li:before,
+    .disorder-grey ol li:before {
+        width: 22px;
+        height: 22px;
+        left: -30px;
+        font-size: 11px;
+    }
+    
+    .disorder-white p.human-analogue,
+    .disorder-grey p.human-analogue {
+        padding: 28px 32px !important;
+        margin: 20px 0;
+    }
+    
+    /* Adjust text sizing for mobile */
+    .disorder-white p,
+    .disorder-grey p,
+    .disorder-white ol li,
+    .disorder-grey ol li {
+        font-size: 0.96em;
+    }
+    
+    /* Reduce animation on mobile for performance */
+    .disorder-white,
+    .disorder-grey {
+        animation: none;
+    }
+}
+
+/* Hover effects for interactivity */
+.disorder-white:hover,
+.disorder-grey:hover {
+    box-shadow: 0 6px 20px rgba(44, 62, 80, 0.12);
+    transform: translateY(-3px);
+    border-color: #d0d1d2;
+}
+
+/* Add subtle entrance animations */
+.disorder-white,
+.disorder-grey {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Improved typography for readability */
+.disorder-white p.text,
+.disorder-grey p.text {
+    line-height: 1.7;
+    margin-bottom: 18px;
+    color: #444;
+    font-size: 0.98em;
+}
+
+.disorder-white p,
+.disorder-grey p {
+    line-height: 1.65;
+    color: #444;
+    margin-bottom: 16px;
+}
+
+.disorder-white em,
+.disorder-grey em {
+    color: #2c3e50;
+    font-weight: 650;
+    font-style: italic;
+}
+
+/* Enhanced section spacing */
+.disorder-white h4 + ol,
+.disorder-grey h4 + ol,
+.disorder-white h4 + p,
+.disorder-grey h4 + p {
+    margin-top: 15px;
+}
+
+/* Beautiful scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced focus states for accessibility */
+.disorder-white:focus-within,
+.disorder-grey:focus-within {
+    outline: 2px solid #2c3e50;
+    outline-offset: 2px;
+}
+
+/* Subtle text selection styling */
+.disorder-white ::selection,
+.disorder-grey ::selection {
+    background-color: rgba(44, 62, 80, 0.15);
+    color: #2c3e50;
+}
+
+/* Enhanced readability for long text blocks */
+.disorder-white p:not(.human-analogue),
+.disorder-grey p:not(.human-analogue) {
+    max-width: 75ch;
+    hyphens: auto;
+    word-spacing: 0.1em;
+}
+
+/* Professional table styling enhancements */
+table {
+    box-shadow: 0 1px 3px rgba(44, 62, 80, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Better link styling within disorders */
+.disorder-white a,
+.disorder-grey a {
+    color: #2c3e50;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(44, 62, 80, 0.3);
+    transition: all 0.2s ease;
+}
+
+.disorder-white a:hover,
+.disorder-grey a:hover {
+    border-bottom-color: #2c3e50;
+    background-color: rgba(44, 62, 80, 0.05);
+}
+
+/* Contact Form Styling */
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background: rgba(44, 62, 80, 0.02);
+    border-radius: 12px;
+    border: 1px solid rgba(44, 62, 80, 0.1);
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.08);
+}
+
+.contact-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin-top: 20px;
+    color: #2c3e50;
+    font-size: 1.1em;
+}
+
+.contact-form label:first-child {
+    margin-top: 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px 18px;
+    margin-bottom: 20px;
+    border: 2px solid rgba(44, 62, 80, 0.15);
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: inherit;
+    background: #ffffff;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #2c3e50;
+    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
+    background: #fafbfc;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+}
+
+.send-button {
+    background: #2c3e50;
+    color: white;
+    padding: 16px 32px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.2);
+}
+
+.send-button:hover {
+    background: #34495e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.3);
+}
+
+.send-button:active {
+    transform: translateY(0px);
+    box-shadow: 0 2px 6px rgba(44, 62, 80, 0.2);
+}
+
+.send-button i {
+    margin-left: 8px;
+}
+
+/* Mobile responsive for contact form */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 30px 20px;
+        margin: 0 10px;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+        padding: 12px 15px;
+    }
+    
+    .send-button {
+        padding: 14px 28px;
+        font-size: 1em;
+    }
+}
