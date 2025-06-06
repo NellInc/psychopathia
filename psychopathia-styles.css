@@ -1,10 +1,17 @@
 /* Psychopathia Machinalis - Custom Styles */
 
 /* Title spacing - add 0.3em space between title lines */
-.title br {
-    margin-bottom: 0.3em;
+.title {
+    line-height: 1.2;
+}
+
+.title-first-line,
+.title-second-line {
     display: block;
-    content: "";
+}
+
+.title-second-line {
+    margin-top: 0.3em;
 }
 
 /* Button styling - light blue theme for header navigation */
