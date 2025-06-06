@@ -39,10 +39,19 @@
 
 /* Citation box styling */
 pre code.plaintext {
-    background-color: #2c3e50 !important;
-    color: #f8f8f2 !important;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
+    color: #ffffff !important;
     border-radius: 12px !important;
     padding: 25px !important;
+    border: 1px solid #3d566f !important;
+}
+
+/* Ensure the pre container for citation also has gradient */
+pre:has(code.plaintext) {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
+    color: #ffffff !important;
+    border-radius: 12px !important;
+    padding: 0 !important;
     border: 1px solid #3d566f !important;
 }
 
@@ -138,8 +147,8 @@ hr.disorder-separator {
 
 /* Code blocks for this paper */
 pre {
-    background-color: #2c3e50; 
-    color: #f8f8f2; 
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); 
+    color: #ffffff; 
     padding: 20px;
     border-radius: 5px;
     overflow-x: auto;
@@ -152,7 +161,7 @@ pre {
 
 /* Dysfunction category intro boxes */
 .dysfunction-intro {
-    background-color: #2c3e50;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     color: #f8f8f2;
     padding: 30px;
     border-radius: 8px;
@@ -713,8 +722,10 @@ table {
     font-weight: 600;
     margin-bottom: 8px;
     margin-top: 20px;
-    color: #2c3e50;
-    font-size: 1.1em;
+    color: #353535;
+    font-size: 16px;
+    font-family: "Poppins", serif;
+    line-height: 1.6;
 }
 
 .contact-form label:first-child {
@@ -728,8 +739,10 @@ table {
     margin-bottom: 20px;
     border: 2px solid rgba(44, 62, 80, 0.15);
     border-radius: 8px;
-    font-size: 1em;
-    font-family: inherit;
+    font-size: 16px;
+    font-family: "Charter", sans-serif;
+    line-height: 1.6;
+    color: #353535;
     background: #ffffff;
     transition: all 0.3s ease;
     box-sizing: border-box;
@@ -749,12 +762,21 @@ table {
     line-height: 1.6;
 }
 
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(53, 53, 53, 0.6);
+    font-family: "Charter", sans-serif;
+    font-size: 16px;
+}
+
 .send-button {
-    background: #2c3e50;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #3d5a73 100%);
     color: white;
     padding: 16px 32px;
-    font-size: 1.1em;
+    font-size: 16px;
     font-weight: 600;
+    font-family: "Poppins", serif;
+    line-height: 1.6;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -763,7 +785,7 @@ table {
 }
 
 .send-button:hover {
-    background: #34495e;
+    background: linear-gradient(135deg, #34495e 0%, #3d5a73 50%, #465c7a 100%);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(44, 62, 80, 0.3);
 }
@@ -784,13 +806,23 @@ table {
         margin: 0 10px;
     }
     
+    .contact-form label {
+        font-size: 15px;
+    }
+    
     .contact-form input,
     .contact-form textarea {
         padding: 12px 15px;
+        font-size: 15px;
+    }
+    
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+        font-size: 15px;
     }
     
     .send-button {
         padding: 14px 28px;
-        font-size: 1em;
+        font-size: 15px;
     }
 }
