@@ -319,16 +319,16 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add the filtered headings to navigation
             sectionHeadings.forEach(heading => {
                 if (heading.tagName === 'H2') {
-                    const h2Item = document.createElement('li');
-                    h2Item.className = 'nav-item h2';
+                const h2Item = document.createElement('li');
+                h2Item.className = 'nav-item h2';
                     h2Item.textContent = heading.textContent.trim();
-                    h2Item.addEventListener('click', () => {
+                h2Item.addEventListener('click', () => {
                         heading.scrollIntoView({ behavior: 'smooth' });
-                        if (window.innerWidth < 768) {
-                            resetNavbarState();
-                        }
-                    });
-                    navList.appendChild(h2Item);
+                    if (window.innerWidth < 768) {
+                        resetNavbarState();
+                    }
+                });
+                navList.appendChild(h2Item);
                 } else if (heading.tagName === 'H3') {
                     const h3Item = document.createElement('li');
                     h3Item.className = 'nav-item h3';
@@ -429,7 +429,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         } else {
                             nextH2Pos = document.documentElement.scrollHeight;
                         }
-                        
+
                         // Add buffer before H2 activation - only activate H2 when we're significantly past it
                         const h2ActivationBuffer = 80; // pixels after H2 before it becomes active
                         if (scrollPosition >= h2Pos + h2ActivationBuffer && scrollPosition < nextH2Pos) {
