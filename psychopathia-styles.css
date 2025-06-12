@@ -1015,3 +1015,27 @@ table tr:nth-child(even) td {
         margin: 0 auto;
     }
 }
+
+/* Header height reduction and image positioning adjustments */
+div.container.blog#first-content div.blog-title {
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+}
+
+div.container.blog#first-content div.blog-title .blog-cover {
+    margin-top: -1em !important; /* Move image up by 1em */
+    padding: 2vh 0 !important;
+}
+
+/* Mobile adjustments for header */
+@media (max-width: 768px) {
+    div.container.blog#first-content div.blog-title {
+        padding-top: 1.5em !important;
+        padding-bottom: 1.5em !important;
+    }
+    
+    div.container.blog#first-content div.blog-title .blog-cover {
+        margin-top: -1em !important; /* Move image up by 1em on mobile too */
+        padding: 1.5vh 0 !important;
+    }
+}
