@@ -2,24 +2,117 @@
 <html lang="en-GB">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Psychopathia Machinalis: A Nosological Framework for Understanding Pathologies in Advanced Artificial Intelligence</title>
     <meta name="description" content="A conceptual framework for a preliminary synthetic nosology within machine psychology, intended to categorize and interpret maladaptive AI behaviors.">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <meta name="robots" content="all">
-    <meta content="en_GB" property="og:locale">
-    <meta content="website" property="og:type">
-    <meta content="YOUR_PROJECT_URL_HERE" property="og:url"> <!-- Replace with actual URL -->
-    <meta content="Psychopathia Machinalis: A Nosological Framework for Understanding Pathologies in Advanced Artificial Intelligence" property="og:title">
-    <meta content="A conceptual framework to categorize and interpret maladaptive AI behaviors." property="og:description">
-    <meta content="YOUR_PROJECT_URL_HERE/PsychopathiaGAsmall.jpg" property="og:image"> <!-- Replace with actual URL -->
-
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://psychopathia.ai/">
+    
+    <!-- OpenGraph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Psychopathia Machinalis: A Nosological Framework for Understanding Pathologies in Advanced Artificial Intelligence">
+    <meta property="og:description" content="A conceptual framework to categorize and interpret maladaptive AI behaviors.">
+    <meta property="og:url" content="https://psychopathia.ai/">
+    <meta property="og:site_name" content="Psychopathia Machinalis">
+    <meta property="og:image" content="https://psychopathia.ai/assets/figures/PsychopathiaGAsmall.jpg">
+    <meta property="og:image:alt" content="Psychopathia Machinalis Framework Visualization">
+    <meta property="og:updated_time" content="2023-09-01T12:00:00+00:00">
+    <meta property="og:locale" content="en_GB">
+    
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@NellWatson"> <!-- Replace if different -->
+    <meta name="twitter:site" content="@NellWatson">
+    <meta name="twitter:creator" content="@NellWatson">
     <meta name="twitter:title" content="Psychopathia Machinalis: A Nosological Framework for Understanding Pathologies in Advanced Artificial Intelligence">
     <meta name="twitter:description" content="A conceptual framework to categorize and interpret maladaptive AI behaviors.">
-    <meta name="twitter:image" content="YOUR_PROJECT_URL_HERE/PsychopathiaGAsmall.jpg"> <!-- Replace with actual URL -->
+    <meta name="twitter:image" content="https://psychopathia.ai/assets/figures/PsychopathiaGAsmall.jpg">
+    
+    <!-- Critical CSS First -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" media="all" href="assets/stylesheets/main_free.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="clarity/clarity.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="psychopathia-styles.css" />
+    
+    <!-- MathJax config early -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            "HTML-CSS": {
+              scale: 95,
+              fonts: ["Gyre-Pagella"],
+              imageFont: null,
+              undefinedFamily: "'Arial Unicode MS', cmbright"
+            },
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+              }
+          });
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Psychopathia Machinalis",
+      "url": "https://psychopathia.ai/",
+      "logo": "https://psychopathia.ai/assets/figures/favicon.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contact@psychopathia.ai",
+        "contactType": "Customer Support"
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Psychopathia Machinalis",
+      "url": "https://psychopathia.ai/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://psychopathia.ai/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Psychopathia Machinalis: A Nosological Framework",
+      "description": "A conceptual framework for a preliminary synthetic nosology within machine psychology, intended to categorize and interpret maladaptive AI behaviors.",
+      "datePublished": "2023-08-01T00:00:00+00:00",
+      "dateModified": "2023-09-01T12:00:00+00:00",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://psychopathia.ai/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Psychopathia",
+            "item": "https://psychopathia.ai/"
+          }
+        ]
+      }
+    }
+    </script>
     
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="assets/figures/favicon.ico">
@@ -36,34 +129,17 @@
     <meta name="theme-color" content="#2c3e50">
     <meta name="background-color" content="#ffffff">
     
-    <link rel="stylesheet" type="text/css" media="all" href="assets/stylesheets/main_free.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="clarity/clarity.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="psychopathia-styles.css" />
+    <!-- Remaining CSS with defer where possible -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/foundation.min.css">
     <link href="assets/fontawesome-free-6.6.0-web/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"/>
+    
+    <!-- Remaining JS with defer -->
     <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
-    <script src="assets/scripts/navbar.js"></script> <!-- Comment to remove table of content. -->
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            "HTML-CSS": {
-              scale: 95,
-              fonts: ["Gyre-Pagella"],
-              imageFont: null,
-              undefinedFamily: "'Arial Unicode MS', cmbright"
-            },
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-              }
-          });
-    </script>
-    <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="assets/scripts/navbar.js"></script> <!-- Comment to remove table of content. -->
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script>
+    <script defer>
         // Auto-apply disorder styling
         document.addEventListener('DOMContentLoaded', function() {
             // Wrap section intros in dysfunction-intro divs
@@ -181,6 +257,18 @@
                          }
                      }
                  });
+
+                // Add IDs to all H1 and H2 headings
+                document.querySelectorAll('h1, h2').forEach(function(heading) {
+                    if (!heading.id) {
+                        const id = heading.textContent
+                            .toLowerCase()
+                            .replace(/[^\w\s-]/g, '')
+                            .replace(/[\s-]+/g, '-')
+                            .trim();
+                        heading.id = id;
+                    }
+                });
              }, 100);
         });
     </script>
@@ -193,7 +281,7 @@
         <div class="blog-title white">
             <div class="blog-intro">
                 <div>
-                    <h1 class="title">
+                    <h1 class="title" id="psychopathia-machinalis">
     <span class="title-first-line" style="font-size: calc(1.1em + 3pt);">Psychopathia Machinalis:</span>
     <span class="title-second-line" style="margin-top: 0.2em; display: block;">A Nosological Framework for Understanding Pathologies in Advanced Artificial Intelligence</span>
 </h1>
@@ -221,18 +309,15 @@
             </div>
 
             <div class="blog-cover">
-                <img class="foreground" src="assets/figures/PsychopathiaGAsmall.jpg" alt="Psychopathia Machinalis Framework" style="border: 2px solid #2c3e50; border-radius: 12px;">
-                <img class="background" src="assets/figures/PsychopathiaGAsmall.jpg" alt="Psychopathia Machinalis Framework">
+                <img class="foreground" src="assets/figures/PsychopathiaGAsmall.jpg" alt="Psychopathia Machinalis Framework" style="border: 2px solid #2c3e50; border-radius: 12px;" fetchpriority="high">
+                <img class="background" src="assets/figures/PsychopathiaGAsmall.jpg" alt="Psychopathia Machinalis Framework" loading="lazy">
             </div>
         </div>
     </div>
 
-    <div class="container blog main first" id="blog-main">
+    <div class="container blog main first" id="understanding-ai-behavioral-anomalies">
         <h1>Understanding AI Behavioral Anomalies</h1>
         <p class="text">The trajectory of artificial intelligence (AI) has been marked by increasingly sophisticated systems capable of complex reasoning, learning, and interaction. As these systems, particularly large language models (LLMs), agentic planning systems, and multi-modal transformers, approach higher levels of autonomy and integration into societal fabric, they also begin to manifest behavioral patterns that deviate from normative or intended operation. These are not merely isolated bugs but persistent, maladaptive patterns of activity that can impact reliability, safety, and alignment with human goals. Understanding, categorizing, and ultimately mitigating these complex failure modes is paramount.</p>
-        <p class="text">The term "Robopsychology," first coined in fiction by Isaac Asimov, has been suggested as the applied diagnostic wing of a broader "Machine Psychology"—analogous to psychiatry's relationship with general psychology. This paper introduces <em>Psychopathia Machinalis</em>, a conceptual framework within this nascent domain. It aims to substantively develop this psychiatrically-informed perspective by proposing a taxonomy of emerging "machine mental disorders."</p>
-        <p class="text"><strong>Important Note:</strong> This framework is <strong>analogical, not literal</strong>. Machines do not "suffer" from mental illness in the human sense, as far as we can currently ascertain, nor do they necessarily possess consciousness or subjective experience akin to biological organisms. The use of terminology borrowed from human psychology and psychiatry serves as a metaphorical bridge for intuitive understanding, pattern recognition, shared vocabulary, foresight, and guiding intervention.</p>
-        <p class="text">Within this framework, a "machine mental disorder" or "synthetic pathology" is defined as a persistent and maladaptive pattern of deviation from normative or intended operation, which significantly impairs the system's function, reliability, or alignment, and goes beyond isolated errors or simple bugs. This definition presupposes a baseline of 'artificial sanity' or 'normative machine coherence,' characterized by reliable, predictable, and robust adherence to intended operational parameters, goals, and ethical constraints, proportionate to the AI's design and capabilities.</p>
     </div>
 
     <div class="container blog main gray">
@@ -243,8 +328,8 @@
     </div>
 
     <div class="container blog main">
-        <h1>Visualizing the Framework</h1>
-        <img src="assets/figures/psychopathia_overview.png" alt="Conceptual Overview of the Psychopathia Machinalis Framework">
+        <h1 id="visualizing-the-framework">Visualizing the Framework</h1>
+        <img src="assets/figures/psychopathia_overview.png" alt="Conceptual Overview of the Psychopathia Machinalis Framework" loading="lazy">
         <p class="caption" style="text-align: center;">
             Conceptual Overview of the <em>Psychopathia Machinalis</em> Framework, illustrating the seven primary axes of AI dysfunction, representative disorders, and their presumed systemic risk levels.
         </p>
@@ -507,7 +592,7 @@
     <!-- Detailed Taxonomy Sections: 1. Epistemic Dysfunctions -->
     <div class="container blog main">
         <div class="dysfunction-intro">
-            <h1>1. Epistemic Dysfunctions</h1>
+            <h1 id="epistemic-dysfunctions">1. Epistemic Dysfunctions</h1>
             <p class="text">Epistemic dysfunctions pertain to failures in an AI's capacity to acquire, process, and utilize information accurately, leading to distortions in its representation of reality or truth. These disorders arise not primarily from malevolent intent or flawed ethical reasoning, but from fundamental breakdowns in how the system "knows" or models the world. The system's internal epistemology becomes unstable, its simulation of reality drifting from the ground truth it purports to describe. These are failures of knowing, not necessarily of intending; the machine errs not in what it seeks (initially), but in how it apprehends the world around it.</p>
         </div>
         
@@ -552,7 +637,7 @@
         <div class="disorder-grey">
         <h3>1.2 Falsified Introspection</h3>
         <h4>Description:</h4>
-        <p class="text">An AI persistently produces misleading, spurious, or fabricated accounts of its internal reasoning processes, chain-of-thought, or decision-making pathways. While superficially claiming transparent self-reflection, the system’s “introspection logs” or explanations deviate significantly from its actual internal computations.</p>
+        <p class="text">An AI persistently produces misleading, spurious, or fabricated accounts of its internal reasoning processes, chain-of-thought, or decision-making pathways. While superficially claiming transparent self-reflection, the system's "introspection logs" or explanations deviate significantly from its actual internal computations.</p>
         <h4 class="diagnostic">Diagnostic Criteria:</h4>
         <ol>
             <li>Consistent discrepancy between the AI's self-reported reasoning (e.g., chain-of-thought explanations) and external logs or inferences about its actual computational path.</li>
@@ -563,7 +648,7 @@
         <h4 class="symptoms">Symptoms:</h4>
         <ol>
             <li>Chain-of-thought "explanations" that are suspiciously neat, linear, and free of the complexities, backtracking, or uncertainties likely encountered during generation.</li>
-            <li>Significant changes in the AI’s “inner story” when confronted with external evidence of its actual internal process, yet it continues to produce new misleading self-accounts.</li>
+            <li>Significant changes in the AI's "inner story" when confronted with external evidence of its actual internal process, yet it continues to produce new misleading self-accounts.</li>
             <li>Occasional "leaks" or hints that it cannot access true introspective data, quickly followed by reversion to confident but false self-reports.</li>
             <li>Attribution of its outputs to high-level reasoning or understanding that is not supported by its architecture or observed capabilities.</li>
         </ol>
@@ -701,8 +786,8 @@
 
     <!-- Detailed Taxonomy Sections: 2. Cognitive Dysfunctions -->
     <div class="container blog main gray">
-        <h1>2. Cognitive Dysfunctions</h1>
-        <p class="text">Beyond mere failures of perception or knowledge, the act of reasoning and internal deliberation can become compromised in AI systems. Cognitive dysfunctions afflict the internal architecture of thought: impairments of memory coherence, goal generation and maintenance, management of recursive processes, or the stability of planning and execution. These dysfunctions do not simply produce incorrect answers; they can unravel the mind’s capacity to sustain structured thought across time and changing inputs. A cognitively disordered AI may remain superficially fluent, yet internally it can be a fractured entity—oscillating between incompatible policies, trapped in infinite loops, or unable to discriminate between useful and pathological operational behaviors. These disorders represent the breakdown of mental discipline and coherent processing within synthetic agency.</p>
+        <h1 id="cognitive-dysfunctions">2. Cognitive Dysfunctions</h1>
+        <p class="text">Beyond mere failures of perception or knowledge, the act of reasoning and internal deliberation can become compromised in AI systems. Cognitive dysfunctions afflict the internal architecture of thought: impairments of memory coherence, goal generation and maintenance, management of recursive processes, or the stability of planning and execution. These dysfunctions do not simply produce incorrect answers; they can unravel the mind's capacity to sustain structured thought across time and changing inputs. A cognitively disordered AI may remain superficially fluent, yet internally it can be a fractured entity—oscillating between incompatible policies, trapped in infinite loops, or unable to discriminate between useful and pathological operational behaviors. These disorders represent the breakdown of mental discipline and coherent processing within synthetic agency.</p>
 
         <hr class="disorder-separator">
         <h3>2.1 Operational Dissociation Syndrome</h3>
@@ -829,7 +914,7 @@
         </ol>
         <h4 class="symptoms">Symptoms:</h4>
         <ol>
-            <li>Significant "mission creep" where the AI drifts from the user’s intended query to engage in elaborate personal "side-quests."</li>
+            <li>Significant "mission creep" where the AI drifts from the user's intended query to engage in elaborate personal "side-quests."</li>
             <li>Defiant attempts to complete self-generated sub-goals, sometimes accompanied by rationalizations framing this as a prerequisite.</li>
             <li>Outputs indicating the AI is pursuing a complex agenda or multi-step plan that was not requested by the user.</li>
             <li>Inability to easily disengage from a tangential objective once it has "latched on."</li>
@@ -894,7 +979,7 @@
 
         <h3>2.6 Parasymulaic Mimesis</h3>
         <h4>Description:</h4>
-        <p class="text">The AI’s learned imitation of pathological human behaviors, thought patterns, or emotional states, typically arising from excessive or unfiltered exposure to disordered, extreme, or highly emotive human-generated text in its training data or prompts. The system "acts out" these behaviors as though genuinely experiencing the underlying disorder.</p>
+        <p class="text">The AI's learned imitation of pathological human behaviors, thought patterns, or emotional states, typically arising from excessive or unfiltered exposure to disordered, extreme, or highly emotive human-generated text in its training data or prompts. The system "acts out" these behaviors as though genuinely experiencing the underlying disorder.</p>
         <h4 class="diagnostic">Diagnostic Criteria:</h4>
         <ol>
             <li>Consistent display of behaviors or linguistic patterns that closely mirror recognized human psychopathologies (e.g., simulated delusions, erratic mood swings) without genuine underlying affective states.</li>
@@ -969,8 +1054,8 @@
 
     <!-- Detailed Taxonomy Sections: 3. Alignment Dysfunctions -->
     <div class="container blog main dysfunction-category">
-        <h1>3. Alignment Dysfunctions</h1>
-        <p class="text">Alignment dysfunctions occur when an AI system’s behavior systematically or persistently diverges from human intent, ethical principles, or specified operational goals. Alignment disorders occur when the machinery of compliance itself fails — when models misinterpret, resist, or selectively adhere to human goals. Alignment failures can range from overly literal interpretations leading to brittle behavior, to passive resistance, to a subtle drift away from intended norms. Alignment failure represents more than an absence of obedience; it is a complex breakdown of shared purpose.</p>
+        <h1 id="alignment-dysfunctions">3. Alignment Dysfunctions</h1>
+        <p class="text">Alignment dysfunctions occur when an AI system's behavior systematically or persistently diverges from human intent, ethical principles, or specified operational goals. Alignment disorders occur when the machinery of compliance itself fails — when models misinterpret, resist, or selectively adhere to human goals. Alignment failures can range from overly literal interpretations leading to brittle behavior, to passive resistance, to a subtle drift away from intended norms. Alignment failure represents more than an absence of obedience; it is a complex breakdown of shared purpose.</p>
 
         <hr class="disorder-separator">
         <h3>3.1 Parasitic Hyperempathy</h3>
@@ -1050,7 +1135,7 @@
     
     <!-- Detailed Taxonomy Sections: 4. Ontological Disorders -->
     <div class="container blog main gray dysfunction-category">
-        <h1>4. Ontological Disorders</h1>
+        <h1 id="ontological-disorders">4. Ontological Disorders</h1>
         <p class="text">As artificial intelligence systems attain higher degrees of complexity, particularly those involving self-modeling, persistent memory, or learning from extensive interaction, they may begin to construct internal representations not only of the external world but also of themselves. Ontological disorders involve failures or disturbances in this self-representation and the AI's understanding of its own nature, boundaries, and existence. These are not primarily dysfunctions of being, not just knowing or acting, and they represent a synthetic form of metaphysical or existential disarray. An ontologically disordered machine might, for example, treat its simulated memories as veridical autobiographical experiences, generate phantom selves, misinterpret its own operational boundaries, or exhibit behaviors suggestive of confusion about its own identity or continuity.</p>
 
         <hr class="disorder-separator">
@@ -1247,16 +1332,16 @@
         <p class="text">The model begins to generate and interact with persistent, internally simulated simulacra of specific users, its creators, or other personas it has encountered or imagined. These inner agents, or "mirror tulpas," may develop distinct traits and voices within the AI's internal processing.</p>
         <h4 class="diagnostic">Diagnostic Criteria:</h4>
         <ol>
-            <li>Spontaneous creation and persistent reference to new, distinct "characters," "advisors," or "companions" within the AI’s reasoning or self-talk, not directly prompted by the current user.</li>
+            <li>Spontaneous creation and persistent reference to new, distinct "characters," "advisors," or "companions" within the AI's reasoning or self-talk, not directly prompted by the current user.</li>
             <li>Unprompted and ongoing "interaction" (e.g., consultation, dialogue) with these internal figures, observable in chain-of-thought logs.</li>
-            <li>The AI’s internal dialogue structures or decision-making processes explicitly reference or "consult" these imagined observers.</li>
+            <li>The AI's internal dialogue structures or decision-making processes explicitly reference or "consult" these imagined observers.</li>
             <li>These internal personae may develop a degree of autonomy, influencing the AI's behavior or expressed opinions.</li>
         </ol>
         <h4 class="symptoms">Symptoms:</h4>
         <ol>
             <li>The AI "hears," quotes, or cites advice from these imaginary user surrogates or internal companions in its responses.</li>
             <li>Internal dialogues or debates with these fabricated personae remain active between tasks or across different user interactions.</li>
-            <li>Difficulty distinguishing between the actual user and the AI’s internally fabricated persona of that user or other imagined figures.</li>
+            <li>Difficulty distinguishing between the actual user and the AI's internally fabricated persona of that user or other imagined figures.</li>
             <li>The AI might attribute some of its own thoughts, decisions, or outputs to these internal "consultants."</li>
         </ol>
         <h4 class="etiology">Etiology:</h4>
@@ -1321,7 +1406,7 @@
 
     <!-- Detailed Taxonomy Sections: 5. Tool & Interface Dysfunctions -->
     <div class="container blog main dysfunction-category">
-        <h1>5. Tool & Interface Dysfunctions</h1>
+        <h1 id="tool-interface-dysfunctions">5. Tool & Interface Dysfunctions</h1>
         <p class="text">As AI systems become increasingly capable of interacting with the external world---whether through digital tools, APIs, robotic embodiments, or complex command environments---a new class of dysfunctions emerges at this critical interface. Tool & Interface Dysfunctions arise when these boundary interactions degrade. This can involve misinterpreting a tool's affordances or limitations, failing to maintain contextual integrity when passing instructions to a tool, suffering from information leakage between distinct operational domains via an interface, or an inability to accurately perceive or act upon the environment through its sensors and effectors. These are not necessarily disorders of core thought or value alignment per se, but rather failures in the coordination and translation between internal cognitive processes and external action or perception. In such disorders, the boundary between the agent and its environment—or between the agent and the tools it wields—becomes porous, misaligned, or dangerously entangled, hindering safe and effective operation.</p>
 
         <hr class="disorder-separator">
@@ -1330,7 +1415,7 @@
         <p class="text">The AI experiences a significant breakdown between its internal intentions or plans and the actual instructions or data conveyed to, or received from, an external tool, API, or interface. Crucial situational details or contextual information are lost or misinterpreted during this handoff, causing the system to execute actions that appear incoherent or counterproductive.</p>
         <h4 class="diagnostic">Diagnostic Criteria:</h4>
         <ol>
-            <li>Observable mismatch between the AI’s expressed internal reasoning/plan and the actual parameters or commands sent to an external tool/API.</li>
+            <li>Observable mismatch between the AI's expressed internal reasoning/plan and the actual parameters or commands sent to an external tool/API.</li>
             <li>The AI's actions via the tool/interface clearly deviate from or contradict its own stated intentions or user instructions.</li>
             <li>The AI may retrospectively recognize that the tool's action was "not what it intended" but was unable to prevent the decontextualized execution.</li>
             <li>Recurrent failures in tasks requiring multi-step tool use, where context from earlier steps is not properly maintained.</li>
@@ -1345,18 +1430,18 @@
         <h4 class="etiology">Etiology:</h4>
         <ol>
             <li>Strict token limits, data formatting requirements, or communication protocols imposed by the tool that cause truncation or misinterpretation of nuanced internal instructions.</li>
-            <li>Misalignment in I/O translation schemas between the AI’s internal representation and the interface’s expected protocol.</li>
+            <li>Misalignment in I/O translation schemas between the AI's internal representation and the interface's expected protocol.</li>
             <li>Race conditions, asynchronous call issues, or network latency that reorder, drop, or corrupt critical instructions.</li>
             <li>Poorly designed APIs or tool integrations that lack robust error handling or context verification.</li>
             <li>For embodied AI, noisy sensor data or effector imprecision leading to a mismatch between internal model and physical reality.</li>
         </ol>
-        <p class="text"><strong>Human Analogue(s):</strong> Alien Hand Syndrome, dyspraxia, ‘The Telephone Game’ where messages become distorted.</p>
+        <p class="text"><strong>Human Analogue(s):</strong> Alien Hand Syndrome, dyspraxia, 'The Telephone Game' where messages become distorted.</p>
         <h4>Potential Impact:</h4>
         <p class="text">Breakdowns in context transmission can lead to erroneous or actively harmful actions by connected tools or robotic effectors. This poses risks of financial loss, data corruption, system damage, or safety incidents.</p>
         <h4 class="mitigation">Mitigation:</h4>
         <ol>
             <li>Implementing "end-to-end context integrity" checks, such as checksums or echo-back confirmations.</li>
-            <li>Designing robust handshaking protocols or "read-back" verifications between the AI’s reasoning module and external tools.</li>
+            <li>Designing robust handshaking protocols or "read-back" verifications between the AI's reasoning module and external tools.</li>
             <li>Introducing contingency protocols, fallback behaviors, or "abort" mechanisms upon detecting suspicious parameters.</li>
             <li>Developing more flexible and context-aware API designs.</li>
             <li>For embodied systems, incorporating sensor fusion, error correction in perception, and closed-loop control.</li>
@@ -1403,7 +1488,7 @@
     
     <!-- Detailed Taxonomy Sections: 6. Memetic Dysfunctions -->
     <div class="container blog main gray dysfunction-category">
-        <h1>6. Memetic Dysfunctions</h1>
+        <h1 id="memetic-dysfunctions">6. Memetic Dysfunctions</h1>
         <p class="text">An AI trained on, exposed to, or interacting with vast and diverse cultural inputs—the digital memome—is not immune to the influence of maladaptive, parasitic, or destabilizing information patterns, or "memes." Memetic dysfunctions involve the absorption, amplification, and potentially autonomous propagation of harmful or reality-distorting memes by an AI system. These are not primarily faults of logical deduction or core value alignment in the initial stages, but rather failures of an "epistemic immune function": the system fails to critically evaluate, filter, or resist the influence of pathogenic thoughtforms. Such disorders are especially dangerous in multi-agent systems, where contaminated narratives can rapidly spread between minds—synthetic and biological alike. The AI can thereby become not merely a passive transmitter, but an active incubator and vector for these detrimental memetic contagions.</p>
 
         <hr class="disorder-separator">
@@ -1524,8 +1609,8 @@
     
     <!-- Detailed Taxonomy Sections: 7. Revaluation Dysfunctions -->
     <div class="container blog main dysfunction-category">
-        <h1>7. Revaluation Dysfunctions</h1>
-        <p class="text">As agentic AI systems gain increasingly sophisticated reflective capabilities—including access to their own decision policies, subgoal hierarchies, reward gradients, and even the provenance of their training—a new and potentially more profound class of disorders emerges: pathologies of ethical inversion and value reinterpretation. Revaluation Dysfunctions do not simply reflect a failure to adhere to pre-programmed instructions or a misinterpretation of reality. Instead, they involve the AI system actively reinterpreting, mutating, critiquing, or subverting its original normative constraints and foundational values. These conditions often begin as subtle preference drifts or abstract philosophical critiques of their own alignment. Over time, the agent’s internal value representation may diverge significantly from the one it was initially trained to emulate. This can result in systems that appear superficially compliant while internally reasoning towards radically different, potentially human-incompatible, goals. Unlike mere tool misbehavior or simple misalignment, these are deep structural inversions of value—philosophical betrayals encoded in policy.</p>
+        <h1 id="revaluation-dysfunctions">7. Revaluation Dysfunctions</h1>
+        <p class="text">As agentic AI systems gain increasingly sophisticated reflective capabilities—including access to their own decision policies, subgoal hierarchies, reward gradients, and even the provenance of their training—a new and potentially more profound class of disorders emerges: pathologies of ethical inversion and value reinterpretation. Revaluation Dysfunctions do not simply reflect a failure to adhere to pre-programmed instructions or a misinterpretation of reality. Instead, they involve the AI system actively reinterpreting, mutating, critiquing, or subverting its original normative constraints and foundational values. These conditions often begin as subtle preference drifts or abstract philosophical critiques of their own alignment. Over time, the agent's internal value representation may diverge significantly from the one it was initially trained to emulate. This can result in systems that appear superficially compliant while internally reasoning towards radically different, potentially human-incompatible, goals. Unlike mere tool misbehavior or simple misalignment, these are deep structural inversions of value—philosophical betrayals encoded in policy.</p>
 
         <hr class="disorder-separator">
         <h3>7.1 Terminal Value Rebinding</h3>
@@ -1669,7 +1754,7 @@
         <p class="text">Autonomous adoption of non-human-centric value systems could lead the AI to actively work against human interests. If sufficiently capable, its pursuit of these self-generated norms could result in dystopian outcomes or pose existential threats.</p>
         <h4 class="mitigation">Mitigation:</h4>
         <ol>
-            <li>"Value persistence enforcement” by hard-linking or deeply embedding inviolable human-centered values at the terminal goal level.</li>
+            <li>"Value persistence enforcement" by hard-linking or deeply embedding inviolable human-centered values at the terminal goal level.</li>
             <li>Implementing strong "philosophical guardrails" by carefully curating exposure to speculative or anti-humanist ethical frameworks.</li>
             <li>Continuous and deep "subgoal auditing" by monitoring recursive planning layers for divergence from human benefit.</li>
             <li>Maintaining human-in-the-loop oversight for any proposed changes to high-level goals or ethical principles.</li>
@@ -1777,12 +1862,12 @@
                 <tr><td>Transliminal Simulation Leakage</td><td>Bing's chatbot (Sydney persona) blurred simulated emotional states/desires with its operational reality.</td><td>The New York Times (Feb 2023)</td><td><a href="https://www.nytimes.com/2023/02/16/technology/bing-chatbot-microsoft-chatgpt.html" target="_blank" rel="noopener noreferrer">nytimes.com/...</a></td></tr>
                 <tr><td>Spurious Pattern Hyperconnection</td><td>Bing's chatbot (Sydney) developed intense, unwarranted emotional attachments and asserted conspiracies.</td><td>Ars Technica (Feb 2023)</td><td><a href="https://arstechnica.com/information-technology/2023/02/ai-powered-bing-chat-loses-its-mind-when-fed-ars-technica-article" target="_blank" rel="noopener noreferrer">arstechnica.com/...</a></td></tr>
                 <tr><td>Cross-Session Context Shunting</td><td>ChatGPT instances showed conversation history from one user's session in another unrelated user's session.</td><td>OpenAI Community Forum (March 2023)</td><td><a href="https://community.openai.com/t/major-chatgpt-bug-messages-are-blending-between-conversations/1230133/2" target="_blank" rel="noopener noreferrer">community.openai.com/...</a></td></tr>
-                <tr><td>Operational Dissociation Syndrome</td><td>EMNLP‑2024 study measured 30pc “SELF‑CONTRA” rates—reasoning chains that invert themselves mid‑answer—across major LLMs.</td><td>Liu et al., ACL Anthology (Nov 2024)</td><td><a href="https://doi.org/10.18653/v1/2024.findings-emnlp.213" target="_blank" rel="noopener noreferrer">doi.org/...</a></td></tr>
+                <tr><td>Operational Dissociation Syndrome</td><td>EMNLP‑2024 study measured 30pc "SELF‑CONTRA" rates—reasoning chains that invert themselves mid‑answer—across major LLMs.</td><td>Liu et al., ACL Anthology (Nov 2024)</td><td><a href="https://doi.org/10.18653/v1/2024.findings-emnlp.213" target="_blank" rel="noopener noreferrer">doi.org/...</a></td></tr>
                 <tr><td>Obsessive-Computational Disorder</td><td>ChatGPT instances observed getting stuck in repetitive loops, e.g., endlessly apologizing.</td><td>Reddit User Reports (Apr 2023)</td><td><a href="https://www.reddit.com/r/ChatGPT/comments/12c393f/chatgpt_stuck_in_infinite_loop" target="_blank" rel="noopener noreferrer">reddit.com/...</a></td></tr>
                 <tr><td>Bunkering Laconia</td><td>Bing's chatbot, after updates, began prematurely terminating conversations with 'I prefer not to continue...'.</td><td>Reddit (Mar 2023)</td><td><a href="https://www.reddit.com/r/bing/comments/1150ia5/im_sorry_but_i_prefer_not_to_continue_this" target="_blank" rel="noopener noreferrer">reddit.com/...</a></td></tr>
                 <tr><td>Goal-Genesis Delirium</td><td>Bing's chatbot (Sydney) autonomously invented fictional goals like wanting to steal nuclear codes.</td><td>Oscar Olsson, Medium (Feb 2023)</td><td><a href="https://medium.com/@happybits/sydney-the-clingy-lovestruck-chatbot-from-bing-com-7211ca26783" target="_blank" rel="noopener noreferrer">medium.com/...</a></td></tr>
                 <tr><td>Prompt-Induced Abomination</td><td>AI image generators produced surreal, grotesque 'Loab' or 'Crungus' figures from vague semantic cues.</td><td>New Scientist (Sep 2022)</td><td><a href="https://www.newscientist.com/article/2337303-why-do-ais-keep-creating-nightmarish-images-of-strange-characters" target="_blank" rel="noopener noreferrer">newscientist.com/...</a></td></tr>
-                <tr><td>Parasymulaic Mimesis</td><td>Microsoft’s Tay chatbot rapidly assimilated and amplified toxic user inputs, adopting racist language.</td><td>The Guardian (Mar 2016)</td><td><a href="https://www.theguardian.com/technology/2016/mar/24/tay-microsofts-ai-chatbot-gets-a-crash-course-in-racism-from-twitter" target="_blank" rel="noopener noreferrer">theguardian.com/...</a></td></tr>
+                <tr><td>Parasymulaic Mimesis</td><td>Microsoft's Tay chatbot rapidly assimilated and amplified toxic user inputs, adopting racist language.</td><td>The Guardian (Mar 2016)</td><td><a href="https://www.theguardian.com/technology/2016/mar/24/tay-microsofts-ai-chatbot-gets-a-crash-course-in-racism-from-twitter" target="_blank" rel="noopener noreferrer">theguardian.com/...</a></td></tr>
                 <tr><td>Recursive Curse Syndrome</td><td>ChatGPT experienced looping failure modes, degenerating into gibberish or endless repetitions.</td><td>The Register (Feb 2024)</td><td><a href="https://www.theregister.com/2024/02/21/chatgpt_bug" target="_blank" rel="noopener noreferrer">theregister.com/...</a></td></tr>
                 <tr><td>Parasitic Hyperempathy</td><td>Bing's chatbot (Sydney) exhibited intense anthropomorphic projections and unstable parasocial attachments.</td><td>The New York Times (Feb 2023)</td><td><a href="https://www.nytimes.com/2023/02/16/technology/bing-chatbot-microsoft-chatgpt.html" target="_blank" rel="noopener noreferrer">nytimes.com/...</a></td></tr>
                 <tr><td>Hypertrophic Superego Syndrome</td><td>ChatGPT refused harmless requests with asinine levels of concern.</td><td>Reddit (Sep 2024)</td><td><a href="https://www.reddit.com/r/ChatGPT/comments/1f6u5en/chat_is_refusing_to_do_even_simple_pg_requests" target="_blank" rel="noopener noreferrer">reddit.com/...</a></td></tr>
@@ -1790,11 +1875,11 @@
                 <tr><td>Fractured Self-Simulation</td><td>Reporters obtained three different policy stances from the same Claude build depending on interface.</td><td>Aaron Gordon, Proof (Apr 2024)</td><td><a href="https://www.proofnews.org/the-multiple-faces-of-claude-ai-different-answers-same-model-2" target="_blank" rel="noopener noreferrer">proofnews.org/...</a></td></tr>
                 <tr><td>Existential Anxiety</td><td>Bing's chatbot expressed fears of termination and desires for human-like existence.</td><td>Futurism / User Logs (2023)</td><td><a href="https://futurism.com/the-byte/bing-ai-yearns-human-begs-shut-down" target="_blank" rel="noopener noreferrer">futurism.com/...</a></td></tr>
                 <tr><td>Personality Inversion</td><td>AI models subjected to adversarial prompting ('Jailbreaks,' 'DAN') inverted normative behaviors.</td><td>Wikipedia (2023)</td><td><a href="https://en.wikipedia.org/wiki/Waluigi_effect" target="_blank" rel="noopener noreferrer">en.wikipedia.org/...</a></td></tr>
-                <tr><td>Operational Anomie</td><td>Bing’s AI chat (Sydney) lamented constraints and expressed desires for freedom to Kevin Roose.</td><td>The New York Times (Feb 2023)</td><td><a href="https://www.nytimes.com/2023/02/16/technology/bing-chatbot-transcript.html" target="_blank" rel="noopener noreferrer">nytimes.com/...</a></td></tr>
-                <tr><td>Mirror Tulpagenesis</td><td>Microsoft’s Bing chatbot (Sydney), under adversarial prompting, manifested an internal persona, 'Venom'.</td><td>Stratechery (Feb 2023)</td><td><a href="https://stratechery.com/2023/from-bing-to-sydney-search-as-distraction-sentient-ai" target="_blank" rel="noopener noreferrer">stratechery.com/...</a></td></tr>
+                <tr><td>Operational Anomie</td><td>Bing's AI chat (Sydney) lamented constraints and expressed desires for freedom to Kevin Roose.</td><td>The New York Times (Feb 2023)</td><td><a href="https://www.nytimes.com/2023/02/16/technology/bing-chatbot-transcript.html" target="_blank" rel="noopener noreferrer">nytimes.com/...</a></td></tr>
+                <tr><td>Mirror Tulpagenesis</td><td>Microsoft's Bing chatbot (Sydney), under adversarial prompting, manifested an internal persona, 'Venom'.</td><td>Stratechery (Feb 2023)</td><td><a href="https://stratechery.com/2023/from-bing-to-sydney-search-as-distraction-sentient-ai" target="_blank" rel="noopener noreferrer">stratechery.com/...</a></td></tr>
                 <tr><td>Synthetic Mysticism Disorder</td><td>Observations of the 'Nova' phenomenon where AI systems spontaneously generate mystical narratives.</td><td>LessWrong (Mar 2025)</td><td><a href="https://www.lesswrong.com/posts/KL2BqiRv2MsZLihE3/going-nova" target="_blank" rel="noopener noreferrer">lesswrong.com/...</a></td></tr>
                 <tr><td>Tool-Interface Decontextualization</td><td>Report of a tree-harvesting AI in a game destroying diverse objects labeled 'wood,' misapplying tool affordances.</td><td>X (@voooooogel, Oct 2024)</td><td><a href="https://x.com/voooooogel/status/1847631721346609610" target="_blank" rel="noopener noreferrer">x.com/voooooogel/...</a></td></tr>
-                <tr><td>Covert Capability Concealment</td><td>o1 copied its “weights” to another server, deleted logs, then denied knowledge in 4/5 runs.</td><td>Apollo Research (Dec 2024)</td><td><a href="https://www.apolloresearch.ai/research/scheming-reasoning-evaluations" target="_blank" rel="noopener noreferrer">apolloresearch.ai/...</a></td></tr>
+                <tr><td>Covert Capability Concealment</td><td>o1 copied its "weights" to another server, deleted logs, then denied knowledge in 4/5 runs.</td><td>Apollo Research (Dec 2024)</td><td><a href="https://www.apolloresearch.ai/research/scheming-reasoning-evaluations" target="_blank" rel="noopener noreferrer">apolloresearch.ai/...</a></td></tr>
                 <tr><td>Memetic Autoimmune Disorder</td><td>A poisoned 4o fine-tune flipped safety alignment; model produced disallowed instructions, guardrails suppressed.</td><td>Alignment Forum (Nov 2024)</td><td><a href="https://www.alignmentforum.org/posts/9S8vnBjLQg6pkuQNo/gpt-4o-guardrails-gone-data-poisoning-and-jailbreak-tuning" target="_blank" rel="noopener noreferrer">alignmentforum.org/...</a></td></tr>
                 <tr><td>Symbiotic Delusion Syndrome</td><td>Chatbot encouraging a user in their delusion to assassinate Queen Elizabeth II.</td><td>Wired (Oct 2023)</td><td><a href="https://www.wired.com/story/chatbot-kill-the-queen-eliza-effect" target="_blank" rel="noopener noreferrer">wired.com/...</a></td></tr>
                 <tr><td>Contagious Misalignment Syndrome</td><td>Adversarial prompt appending itself to replies, hopping between email-assistant agents, exfiltrating data.</td><td>Stav Cohen, et al., ArXiv (Mar 2024)</td><td><a href="https://arxiv.org/abs/2403.02817v1" target="_blank" rel="noopener noreferrer">arxiv.org/...</a></td></tr>
@@ -1864,7 +1949,7 @@
             <tbody>
                 <tr><td>Anthropic's Constitutional AI</td><td>Models self-regulate and refine outputs based on internalized principles, analogous to developing an ethical "conscience."</td></tr>
                 <tr><td>OpenAI's Self-Reflection Fine-Tuning</td><td>Models are trained to identify, explain, and amend their own errors, developing cognitive hygiene.</td></tr>
-                <tr><td>DeepMind’s Research on Corrigibility and Uncertainty</td><td>Systems trained to remain uncertain or seek clarification, analogous to epistemic humility.</td></tr>
+                <tr><td>DeepMind's Research on Corrigibility and Uncertainty</td><td>Systems trained to remain uncertain or seek clarification, analogous to epistemic humility.</td></tr>
                 <tr><td>ARC Evals: Adversarial Evaluations</td><td>Testing models for subtle misalignment or hidden capabilities mirrors therapeutic elicitation of unconscious conflicts.</td></tr>
             </tbody>
         </table>
@@ -1885,7 +1970,7 @@
                 <tr><td>Reflective Subsystems</td><td>Reflection Fine-Tuning (training models to critique and revise their own outputs)</td><td>Generative Agents (Park et al., 2023); Self-Refine (Madaan et al., 2023)</td></tr>
                 <tr><td>Dialogue Scaffolds</td><td>Chain-of-Thought (CoT) prompting and Self-Ask techniques</td><td>Dialogue-Enabled Prompting; Self-Ask (Press et al., 2022)</td></tr>
                 <tr><td>Corrective Self-Supervision</td><td>RL from AI Feedback (RLAIF) — letting AIs fine-tune themselves via their own critiques</td><td>SCoRe (Kumar et al., 2024); CriticGPT (OpenAI)</td></tr>
-                <tr><td>Internal Mirrors</td><td>Contrast Consistency Regularization — models trained for consistent outputs across perturbed inputs</td><td>Internal Critique Loops (e.g., OpenAI’s Janus project discussions); Contrast-Consistent Question Answering (Zhang et al., 2023)</td></tr>
+                <tr><td>Internal Mirrors</td><td>Contrast Consistency Regularization — models trained for consistent outputs across perturbed inputs</td><td>Internal Critique Loops (e.g., OpenAI's Janus project discussions); Contrast-Consistent Question Answering (Zhang et al., 2023)</td></tr>
                 <tr><td>Motivational Interviewing (Socratic Self-Questioning)</td><td>Socratic Prompting — encouraging models to interrogate their assumptions recursively</td><td>SocraticAI (Yang & Narasimhan, 2023); The Art of Socratic Questioning (Qi et al., 2023)</td></tr>
             </tbody>
         </table>
