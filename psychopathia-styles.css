@@ -685,9 +685,57 @@ html {
 
 /* Professional table styling enhancements */
 table {
-    box-shadow: 0 1px 3px rgba(44, 62, 80, 0.08);
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 1px;
+    margin: 20px 0;
+    font-size: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     border-radius: 8px;
     overflow: hidden;
+}
+
+table th, 
+table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 0.5px solid #e8e9ea;
+    background-color: #ffffff;
+}
+
+table th {
+    background-color: #dde5eb;
+    color: #2c3e50;
+    font-weight: 600;
+    border: 0.5px solid #c8d4db;
+}
+
+table tr:nth-child(even) td {
+    background-color: #f9fafb;
+}
+
+/* Specific styling for taxonomy tables */
+#conditions_overview {
+    border-collapse: separate;
+    border-spacing: 0.5px;
+}
+
+#conditions_overview th,
+#conditions_overview td {
+    border: 0.5px solid #e8e9ea;
+}
+
+#conditions_overview tr:nth-child(even) td {
+    background-color: #f9fafb;
+}
+
+#conditions_overview tr:hover td {
+    background-color: #f2f4f6;
+}
+
+#conditions_overview td[colspan="5"] {
+    padding: 10px;
+    text-align: center;
 }
 
 /* Better link styling within disorders */
@@ -782,40 +830,9 @@ table {
     margin-left: 8px;
 }
 
-/* Table improvements */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 15px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-table th, 
-table td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #e8e9ea;
-}
-
-table th {
-    background-color: #dde5eb;
-    color: #2c3e50;
-    font-weight: 600;
-}
-
-table tr:nth-child(even) {
-    background-color: #f9fafb;
-}
-
-table tr:hover {
-    background-color: #f2f4f6;
-}
-
-/* Responsive improvements for mobile */
+/* Mobile styles update */
 @media (max-width: 768px) {
+    /* Contact form styles */
     .contact-form {
         width: 90%;
         max-width: 90%;
@@ -853,21 +870,49 @@ table tr:hover {
         width: 100%;
         font-size: 14px;
         -webkit-overflow-scrolling: touch;
+        border-spacing: 0.5px;
     }
     
     table th, 
     table td {
         padding: 8px;
+        border: 0.5px solid #e8e9ea;
+    }
+    
+    table th {
+        background-color: #dde5eb;
+        color: #2c3e50;
+        font-weight: 600;
+        border: 0.5px solid #c8d4db;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+    
+    #conditions_overview {
+        border-collapse: separate;
+        border-spacing: 0.5px;
     }
     
     #conditions_overview th,
     #conditions_overview td {
         min-width: 80px;
+        border: 0.5px solid #e8e9ea;
     }
     
     #conditions_overview td:last-child {
         max-width: 200px;
         white-space: normal;
+    }
+    
+    #conditions_overview td[colspan="5"] {
+        background-color: #dde5eb;
+        font-weight: bold;
+        text-align: center;
+        color: #2c3e50;
+        position: sticky;
+        top: 0;
+        z-index: 1;
     }
     
     /* Make risk indicators more visible on mobile */
