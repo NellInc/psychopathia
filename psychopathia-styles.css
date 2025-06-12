@@ -755,7 +755,7 @@ table tr:nth-child(even) td {
 
 /* Contact Form Styling */
 .contact-form {
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 20px;
     background: #fff;
@@ -832,10 +832,10 @@ table tr:nth-child(even) td {
 
 /* Mobile styles update */
 @media (max-width: 768px) {
-    /* Contact form styles */
+    /* Contact form styles - narrower width */
     .contact-form {
-        width: 90%;
-        max-width: 90%;
+        width: 85%;
+        max-width: 85%;
         padding: 15px;
         margin: 0 auto;
     }
@@ -862,15 +862,18 @@ table tr:nth-child(even) td {
         display: inline-block;
     }
     
-    /* Taxonomy table improvements for mobile */
+    /* Fix for all tables on mobile - general table fixes */
     table {
         display: block;
         overflow-x: auto;
         white-space: nowrap;
         width: 100%;
+        max-width: 100%;
         font-size: 14px;
         -webkit-overflow-scrolling: touch;
         border-spacing: 0.5px;
+        margin-left: 0;
+        margin-right: 0;
     }
     
     table th, 
@@ -889,18 +892,75 @@ table tr:nth-child(even) td {
         z-index: 1;
     }
     
-    #conditions_overview {
+    /* Container for tables */
+    .container.blog {
+        padding-left: 10px;
+        padding-right: 10px;
+        width: auto;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    /* Fix for all specific tables */
+    #conditions_overview,
+    #observed_examples,
+    #human_ai_therapy,
+    #research_concepts,
+    #empirical_methods,
+    .glossary-table,
+    .abbreviations-table {
+        width: 100%;
+        max-width: 100%;
+        font-size: 13px;
         border-collapse: separate;
         border-spacing: 0.5px;
     }
     
+    /* Specific cell styling for all tables */
+    #conditions_overview td,
+    #observed_examples td,
+    #human_ai_therapy td,
+    #research_concepts td,
+    #empirical_methods td,
+    .glossary-table td,
+    .abbreviations-table td,
     #conditions_overview th,
-    #conditions_overview td {
-        min-width: 80px;
+    #observed_examples th,
+    #human_ai_therapy th,
+    #research_concepts th,
+    #empirical_methods th,
+    .glossary-table th,
+    .abbreviations-table th {
+        padding: 6px;
         border: 0.5px solid #e8e9ea;
+        vertical-align: top;
+    }
+    
+    /* Specific width adjustments for different tables */
+    #conditions_overview td:first-child {
+        min-width: 90px; /* Latin names need a bit more space */
     }
     
     #conditions_overview td:last-child {
+        min-width: 120px;
+        max-width: 180px;
+        white-space: normal;
+    }
+    
+    #observed_examples td:nth-child(2) {
+        max-width: 150px;
+        white-space: normal;
+    }
+    
+    #human_ai_therapy td:last-child,
+    #research_concepts td:last-child,
+    #empirical_methods td:last-child {
+        max-width: 150px;
+        white-space: normal;
+    }
+    
+    .glossary-table td:last-child,
+    .abbreviations-table td:last-child {
         max-width: 200px;
         white-space: normal;
     }
@@ -931,10 +991,15 @@ table tr:nth-child(even) td {
     .risk-high { background-color: rgba(230, 126, 34, 0.1); }
     .risk-critical { background-color: rgba(192, 57, 43, 0.1); }
     
-    /* Improve mobile padding for blog containers */
-    .container.blog {
-        padding-left: 15px;
-        padding-right: 15px;
+    /* Fix for table containers */
+    .container.blog.main.gray#taxonomy-summary,
+    .container.blog.main.gray#observed_examples,
+    .container.blog.main.gray#glossary {
+        padding-left: 5px;
+        padding-right: 5px;
+        width: auto;
+        max-width: 100%;
+        overflow-x: hidden;
     }
     
     /* Ensure form elements don't overflow */
@@ -942,5 +1007,11 @@ table tr:nth-child(even) td {
     .contact-form textarea {
         max-width: 100%;
         box-sizing: border-box;
+    }
+    
+    /* Ensure the contact container is properly sized */
+    .contact-container {
+        max-width: 85% !important;
+        margin: 0 auto;
     }
 }
