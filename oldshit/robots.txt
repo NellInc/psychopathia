@@ -1,0 +1,6 @@
+# Psychopathia Machinalis robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://psychopathia.ai/sitemap.xml 
