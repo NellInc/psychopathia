@@ -286,7 +286,6 @@ document.addEventListener('DOMContentLoaded', function() {
         h1Item.className = 'nav-item h1';
         h1Item.textContent = h1.textContent.trim();
         h1Item.addEventListener('click', () => {
-            skipAutoScroll = true; // Skip auto-scroll for this navigation
             h1.scrollIntoView({ behavior: 'smooth' });
             if (window.innerWidth < 768) {
                 resetNavbarState();
@@ -324,7 +323,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 h2Item.className = 'nav-item h2';
                     h2Item.textContent = heading.textContent.trim();
                 h2Item.addEventListener('click', () => {
-                        skipAutoScroll = true; // Skip auto-scroll for this navigation
                         heading.scrollIntoView({ behavior: 'smooth' });
                     if (window.innerWidth < 768) {
                         resetNavbarState();
@@ -336,7 +334,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     h3Item.className = 'nav-item h3';
                     h3Item.textContent = heading.textContent.trim();
                     h3Item.addEventListener('click', () => {
-                        skipAutoScroll = true; // Skip auto-scroll for this navigation
                         heading.scrollIntoView({ behavior: 'smooth' });
                         if (window.innerWidth < 768) {
                             resetNavbarState();
@@ -372,7 +369,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Scroll handling
     let lastScrollTop = 0;
     let ticking = false;
-    let skipAutoScroll = false; // Flag to skip auto-scroll after user clicks
 
     function updateNavbar() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -383,7 +379,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let activeH1 = null;
         let activeH2 = null;
         let activeH3 = null;
-        const scrollPosition = window.scrollY + windowHeight * 0.3; // Use 30% of viewport height for better detection
+        const scrollPosition = window.scrollY + 10; // Add small offset for better detection
 
         // Find active H1 section
         h1Elements.forEach((h1, index) => {
@@ -462,7 +458,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         
                         // Add buffer before H3 activation - only activate H3 when we're significantly past it
                         // This allows the H1 intro sections to stay highlighted longer
-                        const h3ActivationBuffer = 50; // pixels after H3 before it becomes active - reduced for better responsiveness
+                        const h3ActivationBuffer = 100; // pixels after H3 before it becomes active
                         if (scrollPosition >= h3Pos + h3ActivationBuffer && scrollPosition < nextH3Pos) {
                             activeH3 = h3;
                         }
@@ -512,43 +508,36 @@ document.addEventListener('DOMContentLoaded', function() {
             nav.classList.add('has-active');
             
             // Auto-scroll navigation to keep active item visible
-            if (!skipAutoScroll) {
-                const activeItem = nav.querySelector('.nav-item.active');
-                if (activeItem && window.innerWidth >= 768) { // Only auto-scroll on desktop
-                    const navList = nav.querySelector('.nav-list');
-                    if (navList) {
-                        const navListRect = navList.getBoundingClientRect();
-                        const activeItemRect = activeItem.getBoundingClientRect();
-                        
-                        // Calculate if the active item is outside the visible area
-                        const itemTop = activeItemRect.top - navListRect.top + navList.scrollTop;
-                        const itemBottom = itemTop + activeItemRect.height;
-                        const visibleTop = navList.scrollTop;
-                        const visibleBottom = visibleTop + navListRect.height;
-                        
-                        // Add some padding for better visibility
-                        const padding = 60;
-                        
-                        if (itemTop < visibleTop + padding) {
-                            // Item is above visible area, scroll up
-                            navList.scrollTo({
-                                top: Math.max(0, itemTop - padding),
-                                behavior: 'smooth'
-                            });
-                        } else if (itemBottom > visibleBottom - padding) {
-                            // Item is below visible area, scroll down
-                            navList.scrollTo({
-                                top: itemBottom - navListRect.height + padding,
-                                behavior: 'smooth'
-                            });
-                        }
+            const activeItem = nav.querySelector('.nav-item.active');
+            if (activeItem) {
+                const navList = nav.querySelector('.nav-list');
+                if (navList) {
+                    const navListRect = navList.getBoundingClientRect();
+                    const activeItemRect = activeItem.getBoundingClientRect();
+                    
+                    // Calculate if the active item is outside the visible area
+                    const itemTop = activeItemRect.top - navListRect.top + navList.scrollTop;
+                    const itemBottom = itemTop + activeItemRect.height;
+                    const visibleTop = navList.scrollTop;
+                    const visibleBottom = visibleTop + navListRect.height;
+                    
+                    // Add some padding for better visibility
+                    const padding = 60;
+                    
+                    if (itemTop < visibleTop + padding) {
+                        // Item is above visible area, scroll up
+                        navList.scrollTo({
+                            top: Math.max(0, itemTop - padding),
+                            behavior: 'smooth'
+                        });
+                    } else if (itemBottom > visibleBottom - padding) {
+                        // Item is below visible area, scroll down
+                        navList.scrollTo({
+                            top: itemBottom - navListRect.height + padding,
+                            behavior: 'smooth'
+                        });
                     }
                 }
-            } else {
-                // Reset the flag after a delay to allow smooth scrolling to complete
-                setTimeout(() => {
-                    skipAutoScroll = false;
-                }, 1000);
             }
         } else {
             navItems.forEach(item => item.classList.remove('active'));
