@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- Main page -->
+  <url>
+    <loc>https://psychopathia.ai/</loc>
+    <lastmod>2023-09-01T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Contact page -->
+  <url>
+    <loc>https://psychopathia.ai/contact/</loc>
+    <lastmod>2023-09-01T12:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- PDF Paper -->
+  <url>
+    <loc>https://psychopathia.ai/assets/figures/zsrfdrrshxbxpmxyyrnsmtpthvkhgyny.pdf</loc>
+    <lastmod>2023-09-01T12:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Audio file -->
+  <url>
+    <loc>https://psychopathia.ai/assets/figures/Psychopathia%20Machinalis_AI_Pathologies_Framework.mp3</loc>
+    <lastmod>2023-09-01T12:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Example page -->
+  <url>
+    <loc>https://psychopathia.ai/Example.html</loc>
+    <lastmod>2023-09-01T12:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Clarity template page (reference) -->
+  <url>
+    <loc>https://psychopathia.ai/clarity.html</loc>
+    <lastmod>2023-09-01T12:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset> 
